@@ -1,0 +1,3 @@
+[submodule "eventmanagement"]
+	path = eventmanagement
+	url = https://github.com/ajshort/silverstripe-eventmanagement.git
