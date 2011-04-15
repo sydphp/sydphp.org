@@ -1,0 +1,36 @@
+body, div, p, fieldset, form, ul, ol, li, h1, h2, h3, h4, h5 {
+	margin : 0;
+	padding : 0;
+}
+
+fieldset {
+	border : none;
+}
+
+.mia {
+	display : none;
+}
+
+div.break,
+div.break-left,
+div.break-right {
+	visibility : hidden;
+	clear : both;
+	border : none;
+	height : 0;
+	line-height : 0;
+	font-size : 0;
+}
+
+div.break-left {
+	clear : left;
+}
+
+div.break-right {
+	clear : right;
+}
+
+a img {
+	border : none;
+	display : block;
+}
