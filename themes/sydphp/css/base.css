@@ -1,0 +1,387 @@
+/**
+ * @note base style sheet to reset across browsers
+ */
+body, table,
+form, fieldset, legend, input, select, textarea,
+ul, ol, li, dl, dt, dd,
+h1,h2,h3,h4,h5,h6 {
+	margin : 0;
+	padding : 0px;
+}
+
+hr.break, div.break {
+	visibility : hidden;
+	clear : both;
+	height : 0;
+	margin : 0;
+	padding : 0px;
+	font-size : 0;
+	line-height : 0;
+}
+
+div.breadcrumbs em {
+	vertical-align : middle;
+	font-size : 1.2em;
+}
+div.breadcrumbs span {
+	vertical-align : middle;
+}
+
+div.break {
+	border-top : 1px solid transparent;
+}
+
+hr.break-left, div.break-left {
+	clear : left;
+}
+
+hr.break-right, div.break-right {
+	clear : right;
+}
+
+.nowrap, .nw {
+	white-space : nowrap;
+}
+
+/* form validation messages - default styling */
+.vmessage {
+	display : none;
+	background-color : #e21;
+	color : #fff;
+	font-weight:bold;
+	padding : 0.4em;
+}
+
+fieldset {
+	border : none;
+}
+
+legend {
+	white-space : normal;
+	width : auto !important;
+	color : #000;
+	min-width : auto !important;
+	min-height : auto !important;
+	display : block;
+}
+
+fieldset legend span.os {
+	position : absolute;
+	left : -90000px;
+}
+
+textarea {
+	display : block;
+	width : 98%;
+	padding : 0.2em;
+	margin : 0 auto;
+	font-size : 100%;
+	height : 8em;
+}
+
+textarea.rta {
+	height : 38em;
+	width : 98%;
+	visibility : hidden;
+/* 	display : none; */
+	
+}
+
+form table {
+	width : 100%;
+}
+
+form fieldset.helpers {
+	display : none !important;
+	text-align : right;
+}
+
+form input.shorttext {
+	width : 3em;
+}
+
+form input.file {}
+
+
+form input.date,
+form input.datetime,
+form input.time {
+	display : inline !important;
+	vertical-align : middle !important;
+}
+
+form input.date {
+	width : 8em !important;
+}
+form input.time {
+	width : 4em !important;
+}
+form input.datetime {
+	width : 12em !important;
+}
+
+form input.int {
+	width : 5em;	
+}
+
+form input.tinyint {
+	width : 3em;	
+}
+
+form input.bigint {
+	width : 8em;	
+}
+
+form span.grouped-element {
+	display : block;
+	padding : 0em;
+}
+
+form span.inline-grouped-element span.grouped-element,
+form span.inline-grouped-element input.radio,
+form span.inline-grouped-element input.checkbox {
+	display : inline;
+}
+
+form span.inline-grouped-element span.grouped-element {
+	margin-right : 0.7em;
+}
+
+form span.grouped-element input.radio,
+form span.grouped-element input.checkbox {
+	padding : 1px;
+	margin : 0px;
+	display : inline;
+	vertical-align : middle;
+}
+
+form span.grouped-element-label {
+	display : inline;
+	padding-left : 0.3em;
+	vertical-align : middle;
+}
+
+img.date {
+	cursor : pointer;
+	width : 16px;
+	height : 16px;
+	display : inline;
+	vertical-align : middle;
+	margin : 0 2px;
+}
+
+sup.req {
+	color : #c30;
+	font-weight : bold;
+	font-size : 1.4em;
+	margin : 0;
+	padding : 0em;
+	vertical-align : middle !important;
+}
+
+.ck-row-add, .ck-row-del {
+	cursor : pointer;
+}
+
+/* autosuggest handling */
+.cas {
+	position : absolute;
+	width : auto;
+	display : block;
+	border : 1px solid #000;
+	background-color : #fff;
+	font-size : 1.2em;
+}
+
+.cas ol {
+	list-style-type : none;
+	margin : 0;
+	padding : 0px;
+}
+
+.cas ol li {
+	padding : 4px;
+	margin : 0;
+	cursor : pointer;
+}
+
+.cas ol li em {
+	font-weight : bold;
+	font-style : normal;
+}
+
+.cas ol li, .cas ol li.normal {
+	background-color : #fff;
+	color : #000;
+}
+
+.cas ol li.current {
+	color : #999;
+	background-color : #333;
+}
+
+
+/** floatation devices **/
+.floater {
+	float : left;
+	margin-right : 1.3em;
+}
+
+.floater-right {
+	float : right;
+	margin-right : 0em;
+}
+
+.floater-25 { width : 25%; }
+.floater-67 { width : 66%; }
+.floater-75 { width : 73%; }
+.floater-33 { width : 33%; }
+.floater-50 { width : 48%; }
+
+
+/** lists **/
+div.fl {
+	padding : 0em 0em 0.8em 0em;
+}
+
+td div.fl {
+	padding : 0em;
+}
+
+div.flatlist ul li,
+div.fl ul li {
+	display : inline;
+	margin-right : 1em;
+}
+
+div.fl-b {
+	float : left;
+	padding : 4px 0px;
+}
+
+div.fl-b ul li {
+	display : block;
+	float : left;
+	margin-right : 1em;
+}
+
+div.fl-b ul li a,
+div.fl-b ul li span,
+div.fl-b ul li strong {
+	display : block;
+	padding : 0.4em 0.2em;
+}
+
+form.record {
+	border-radius : 10px;
+	-moz-border-radius : 10px;
+	-webkit-border-radius : 10px;
+	-khtml-border-radius : 10px;
+	background-color : #687182;
+	padding : 3px;
+	margin-bottom : 1.2em;
+}
+
+form.listing {}
+
+form.inline {
+	background :transparent;
+	display : inline;
+}
+
+form.inline,
+form.inline label,
+form.inline input.text,
+form.inline fieldset {
+	display : inline;
+	vertical-align : baseline;
+}
+
+form.inline input.text {
+	width : auto;
+}
+
+form.inline fieldset.actions {
+	padding : 0em;
+}
+
+form fieldset select.hg {
+	display : block;
+	width : 100%;
+	margin : 0 auto;
+}
+
+form fieldset select.auto {
+	width : auto;
+}
+
+form legend {
+	font-size : 1.1em;
+	font-weight : bold;
+	white-space : normal !important;
+}
+
+form table {
+	margin : 0;
+}
+
+
+form td input.tinyint {
+	width : 3em;
+}
+
+td.nw, th.nw {
+	white-space : nowrap;
+}
+
+tr.ck_hidden {
+	display : none;
+}
+tr.ck_hidden_on {
+	display : table-row;
+}
+
+.ck_toggle_control {
+	cursor : pointer;
+}
+
+.ck_toggle_control .hide {
+	display : none;
+}
+
+form td select, select.bound {
+	width : 9em;
+}
+
+form td label {
+	display : block;
+}
+
+form fieldset.table table {
+	background-color : transparent;
+	border : none;
+}
+
+div.forgot p {
+	padding : 0.6em;
+	margin : 0.5em auto;
+	color : #000;
+}
+
+div.note {
+	padding : 1.2em;
+	background-color : #FFF5DC;
+	border : 1px solid #666;
+	margin-bottom : 0.2em;
+}
+
+div.note p {
+	padding : 0.6em;
+	margin : 0em auto;
+	color : #000;
+}
+
+span.od {
+	color : #c30;
+	font-weight : bold;
+}

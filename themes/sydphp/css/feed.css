@@ -1,0 +1,90 @@
+channel
+{
+	display : block;
+	font-family : message-box;
+}
+channel title
+{
+	font-size : xx-large;
+	color : #eee;
+	text-transform : uppercase;
+	display : block;
+	background-color:  #333;
+	padding : 7px 10px;
+}
+
+channel language, channel generator
+{
+	display : none;
+}
+
+channel lastBuildDate
+{
+	position : absolute;
+	background-color : #eee;
+	padding : 5px 3px;
+	display : block;
+	top : 5px;
+	right : 5px;
+}
+
+channel link
+{
+	display : block;
+	padding : 5px;
+	font-size : medium;
+}
+
+channel description
+{
+	font-size : medium-large;
+	display : block;
+	background : #ccc;
+	color : #666;
+	padding : 5px;
+	
+}
+
+channel item
+{
+	display : block;
+	padding : 1px;
+	border : 1px solid ThreeDShadow;
+	margin : 10px auto;
+	width : 90%
+}
+
+channel item dc:date
+{
+	display : block;
+}
+
+channel item dc:creator
+{
+	display : block;
+	background-color : 1px solid ThreeDShadow;
+}
+
+
+channel item title
+{
+	font-size : 95%;
+	font-weight : bold;
+	color : HighlightText;
+	display : block;
+	background-color: Highlight;
+}
+
+channel item description
+{
+	display : block;
+	font-size : medium-large;
+	color : #666;;
+	padding : 25px 10px;
+	background-color : #eee;
+}
+
+channel item link
+{
+	display : none;
+}

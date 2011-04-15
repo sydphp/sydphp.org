@@ -1,0 +1,53 @@
+#ImageGallery {
+	overflow : hidden;
+/* 	visibility : hidden; */
+	clear : both;
+	padding-top : 2em;
+}
+
+#ImageGallery #GalleryItems {
+	float : left;
+}
+
+#ImageGallery #GalleryMainImage {
+	width : 100%;
+	height : 350px;
+	overflow : hidden;
+	clear : both;
+	margin : 0 auto;
+	background-color : #fff;
+}
+
+#ImageGallery #GalleryMainImage img {
+	display : block;
+	margin : 0 auto;
+}
+
+#ImageGallery,
+#ImageGallery .loaded,
+#ImageGallery .loading {
+	background-image : none !important;
+}
+
+#ImageGallery li {
+	margin: 0em 1em 1em 0em;
+	padding : 6px;
+	float: left;
+	list-style-type : none;
+	overflow : hidden;
+	cursor : pointer;
+	border : 1px solid #999;
+	background-color : #fff;
+}
+
+#ImageGallery li .item {
+	width : 90px;
+	height : 90px;
+	overflow : hidden;
+	display : block;
+}
+
+#ImageGallery li span,
+#ImageGallery li img {
+	display : block;
+}

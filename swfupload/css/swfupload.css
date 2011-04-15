@@ -1,0 +1,44 @@
+ul#file_list li {display:block;list-style:none;margin:15px 0 !important;position:relative;height:62px;width:365px;background:#ccdef3;padding:0 2px !important;}
+ul#file_list li div.progressWrapper {border:2px solid #aaa !important;padding:4px 2px !important;height:20px;margin-top:2px;}
+div.progressWrapper {background:#fff;}
+div.progressContainer {height:100%;position:relative;background:#fff;}
+div.progressBarInProgress {height:100%;background:#3b5998;}
+div.queue-file-name {font-size:13px !important;font-weight:bold;margin:0;color:#444;padding:4px 0;}
+.progressBarStatus {height:1em;color:#a8b6d5;font-size:11px;position:absolute;top:50%;margin-top:-0.5em;left:.5em;width:75% !important;}
+.progressBarStatus.queued {color:#666;}
+.queue-remove-btn {position:absolute;z-index:10;top:3px;left:345px;width:16px;height:16px;}
+.queue-remove-btn a {display:block;text-indent:-9999em;background:url(../images/cancel.png) no-repeat top left;height:100%;width:16px;}
+.queue-remove-btn a:hover {background:url(../images/cancel.png) no-repeat top left !important;}
+
+
+/* SWFUploadFileField */
+div.mainblock {height:185px;}
+div.mainblock ul#file_list {
+width:260px;
+}
+div.mainblock ul#file_list li {
+border:0;
+background:#F0F5FF;
+margin-left:-35px;
+padding:2px;
+border-left:3px solid #aaa;
+width:100%;
+}
+div.mainblock ul#file_list li div.queue-file-name {
+width:100px;
+overflow:hidden;
+}
+div.mainblock ul#file_list li div.queue-remove-btn {
+text-align:right;
+width:35px;
+}
+div.mainblock ul#file_list li a {
+font-size:10px;
+}
+div.mainblock ul#file_list {
+margin-left:-50px;
+}
+div.mainblock ul#file_list li div.progressWrapper {
+width:100px;
+background:none;
+}

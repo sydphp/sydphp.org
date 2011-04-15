@@ -1,0 +1,10 @@
+@import url("typography.php");
+
+body.mceContentBody {
+	padding : 0.5em;
+	font-size : 90%;
+}
+
+#facebox .body {
+	width : 600px;
+}
