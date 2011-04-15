@@ -1,3 +1,45 @@
 [submodule "eventmanagement"]
 	path = eventmanagement
 	url = https://github.com/ajshort/silverstripe-eventmanagement.git
+[submodule "eventresources"]
+	path = eventresources
+	url = https://github.com/ajshort/silverstripe-eventresources.git
+[submodule "eventlocations"]
+	path = eventlocations
+	url = https://github.com/ajshort/silverstripe-eventlocations.git
+[submodule "wordpressconnector"]
+	path = wordpressconnector
+	url = https://github.com/ajshort/silverstripe-wordpressconnector.git
+[submodule "rssconnector"]
+	path = rssconnector
+	url = https://github.com/ajshort/silverstripe-rssconnector.git
+[submodule "siteexporter"]
+	path = siteexporter
+	url = https://github.com/ajshort/silverstripe-siteexporter.git
+[submodule "addressable"]
+	path = addressable
+	url = https://github.com/ajshort/silverstripe-addressable.git
+[submodule "blog"]
+	path = blog
+	url = https://github.com/silverstripe/silverstripe-blog.git
+[submodule "multiform"]
+	path = multiform
+	url = https://github.com/silverstripe/silverstripe-multiform.git
+[submodule "itemsetfield"]
+	path = itemsetfield
+	url = https://github.com/ajshort/silverstripe-itemsetfield.git
+[submodule "externalcontent"]
+	path = externalcontent
+	url = https://github.com/ajshort/silverstripe-external-content.git
+[submodule "memberprofiles"]
+	path = memberprofiles
+	url = https://github.com/ajshort/silverstripe-memberprofiles.git
+[submodule "orderable"]
+	path = orderable
+	url = https://github.com/ajshort/silverstripe-orderable.git
+[submodule "event_calendar"]
+	path = event_calendar
+	url = https://github.com/unclecheese/EventCalendar.git
+[submodule "queuedjobs"]
+	path = queuedjobs
+	url = https://github.com/nyeholt/silverstripe-queuedjobs.git
