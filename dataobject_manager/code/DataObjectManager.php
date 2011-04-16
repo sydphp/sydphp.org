@@ -133,6 +133,7 @@ class DataObjectManager extends ComplexTableField
 		  }
 		}
 
+		//CODEM change - error in original source setting variables
 		if(isset($_REQUEST['ctf']) && is_array($_REQUEST['ctf']) && array_key_exists($this->Name(), $_REQUEST['ctf'])) {
 			$expected = array('start','per_page','showall','showAll','search','filter','sort','sort_dir');
 			foreach($expected as $variable) {
@@ -631,9 +632,10 @@ class DataObjectManager_Item extends ComplexTableField_Item {
 	  return null;
 	}
 	
-	public function EditLink()
-	{
-	 return $this->Link()."/edit?".$this->parent->getQueryString();
+	public function EditLink() {
+		//return $this->Link()."/edit?".$this->parent->getQueryString();
+		//see http://silverstripe.org/dataobjectmanager-module-forum/show/7010?start=264#post295028
+		 return Controller::join_links($this->Link(), "/edit?".$this->parent->getQueryString()); 
 	}
 
 	public function DuplicateLink()
