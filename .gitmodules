@@ -43,3 +43,6 @@
 [submodule "queuedjobs"]
 	path = queuedjobs
 	url = https://github.com/nyeholt/silverstripe-queuedjobs.git
+[submodule "payment"]
+	path = payment
+	url = https://github.com/silverstripe-labs/silverstripe-payment.git
