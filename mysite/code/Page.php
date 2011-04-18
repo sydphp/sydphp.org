@@ -18,25 +18,28 @@ class Page extends SiteTree {
 	
 	public function getCMSFields($cms = NULL) {
 		$fields = parent::getCMSFields($cms);
+		
+		
 		$fields->addFieldToTab('Root.Content.FeatureContent', new CheckboxField('FeaturedPage', 'Is this a featured page'));
 		$fields->addFieldToTab('Root.Content.FeatureContent', new TextAreaField('Blurb', 'Content'));
 		$fields->addFieldToTab('Root.Content.FeatureContent', new SimpleTreeDropdownField('BlurbLink', 'Content link page'));
 		$fields->addFieldToTab('Root.Content.FeatureContent', new ImageField('Banner', 'Image', null, null, null, "assets/Banners/"));
 		
-		
-		$fields->addFieldToTab("Root.Content.AssociatedContent", new DataObjectManager(
-			$this,
-			'Testimonials',
-			'Testimonial',
-			array(
-				//'DateTime' => 'Date',
-				'Author'=>'Author',
-				'Position' => 'Position',
-				//'Quote' => 'Quote',
-				'Project' => 'Project',
-			),
-			'getCMSFields_forPopup'
-		));
+		if(is_a($this, 'RegisterableEvent')) {
+			$fields->addFieldToTab("Root.Content.Presenters", new DataObjectManager(
+				$this,
+				'RegisterableEventPresenter',
+				'RegisterableEventPresenter',
+				array(
+					'Name' => 'Presenter Name',
+					'Topic' => 'Topic',
+					'Company' => 'Position/Organisation',
+					"URL" => "Presenter URL",
+					'Confirmed' => 'Confirmed?',
+				),
+				'getCMSFields_forPopup'
+			));
+		}
 		
 		return $fields;
 	}
