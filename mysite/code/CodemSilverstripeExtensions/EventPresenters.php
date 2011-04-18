@@ -26,6 +26,7 @@ class RegisterableEventPresenter extends DataObject
 			new CheckboxField('Confirmed', 'Confirmed?'),
 			new TextareaField('Note', 'Presenter Notes/Bio etc'),
 			new TextField("URL", "Presenter URL"),
+			new TextField("Twitter", "Twitter handle"),
 			new TextField("Source Page", "Code Source URL"),
 			new ImageUploadField('AssociatedImage','Presenter Image')
 		);
