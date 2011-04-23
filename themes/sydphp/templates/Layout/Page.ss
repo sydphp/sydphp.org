@@ -1,21 +1,4 @@
 
-
-	<div class="app_posts">
-	
-		<div class="inner">
-		
-			<% if Blurb %>
-				<div class="blurb">
-					$Blurb
-				</div>
-			<% end_if %>
-			<% include SideBar %>
-		
-		
-		</div>
-		
-	</div>
-	
 	<div class="app_posts_related">
 	
 		<div class="inner">
@@ -43,6 +26,22 @@
 					<% include Pagination %>
 				
 			</div>
+		
+		</div>
+		
+	</div>
+	
+	<div class="app_posts">
+	
+		<div class="inner">
+		
+			<% if Blurb %>
+				<div class="blurb">
+					$Blurb
+				</div>
+			<% end_if %>
+			<% include SideBar %>
+		
 		
 		</div>
 		

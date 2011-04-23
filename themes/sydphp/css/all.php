@@ -13,7 +13,6 @@ body {
 	color : #333;
 	padding : 0em;
 	background-color : #888;
-	<?php $ncss->Reset()->Gradient(array('from' => '#888', 'to'=>'#333',  'default' => '#888'));?>
 }
 
 table {
@@ -160,7 +159,25 @@ a.feature {
 #app_wrap {
 	padding : 0px;
 	font-size : 1.2em;
-	padding-top : 2em;
+}
+
+#auth {
+	position : absolute;
+	top : 0px;
+	right : 14px;
+	text-align : right;
+	font-weight : bold;
+	background-color : #999;
+	padding : 4px 12px;
+	border-bottom : 1px solid #B6BFDA;
+	border-left : 1px solid #B6BFDA;
+	border-right : 1px solid #B6BFDA;
+	<?php $ncss->Reset()->Radius(array('bl' => '4px', 'br' => '4px'));?>
+}
+
+#auth,
+#auth a {
+	color : #fff;
 }
 
 #app_header {
@@ -267,19 +284,18 @@ a.feature {
 	color : #fff;
 }
 
-#app_msg,
-.app_posts_related {
-	float : right;
-	width : 62%;
+#app_msg {
+	clear : both;
+	width : auto;
 	font-size : 1.3em;
 }
 
 #app_msg {
 	color : #fff;
-	margin : 0 1em 0 0;
+	margin : 1.4em 1em 0 1em;
 	background-color : #777;
 	text-shadow : 0 2px 1px rgba(0, 0, 0, 0.698), 0 0 2px #000;
-	border : 1px solid #999;
+	border : 1px solid #B6BFDA;
 	<?php $ncss->Reset()->Radius(array('all' => '11px'));?>
 }
 
@@ -307,9 +323,19 @@ a.feature {
 	vertical-align : middle;
 }
 
+#app_intro {
+	background-color : #62628C;
+	<?php $ncss->Reset()->Gradient(array('from' => '#8787C0', 'to'=>'#62628C',  'default' => '#62628C'));?>
+	padding  : 3.4em 0 3.4em 0;
+	border-bottom : 1px solid #ccc;
+}
+
 #app_content {
-	padding : 0;
-	margin : 4em 0 0 0;
+	padding : 4em 0 0 0;
+	margin : 0;
+	background-color : #f4f4f4;
+	border-top : 1px solid #555;
+	clear : both;
 }
 
 #app_content #contain {
@@ -325,10 +351,6 @@ a.feature {
 .app_posts_related form,
 #app_content .event {
 	padding : 0.9em;
-	background-color : #525276;
-	<?php
-	$ncss->Reset()->Radius(array('all' => '4px'));
-	?>
 }
 
 #app_content .event {
@@ -605,50 +627,30 @@ hr.break, div.break {
 	font-size : 0;
 }
 
-.app_posts,
 .app_posts_related {
 	<?php
 		$ncss->Reset()
-		->Radius(array('all' => '12px'))
-		->BoxShadow(array(
-				'shadows' => array(
-						array(
-							'x' => '4px', 'y' => '4px',
-							'blur' => '4px','spread' => '0px',
-							'color' => 'rgba(48,48,48,0.7)'
-						)
-					)
-				)
-		);
+				->Radius(array('all' => '12px'));
 	?>
-	margin : 0 0 1.2em 0;
-	padding : 0px 0px 2.4em 0px;
-	background-color : #D8D8DC;
+	padding : 1.3em;
+	font-size : 1.1em;
+	margin : 0 1em 1.2em 0;
 }
 
 .app_posts {
-	width : 32%;
-	margin-left : 1%;
-	float : left;
-	background-color : #D8D8DC;
-	border : 1px solid #ddd;
-}
-
-.app_posts_related {
-	margin : 0 1em 1.2em 0;
-	background-color : #62628C;
-	color : #fff;
+	width : auto;
+	float : none;
 }
 
 .app_posts_related a {
-	color : #fff;
-	border-bottom : 1px solid #fff;
+	color : #333;
+	border-bottom : 1px solid #ccc;
 	text-decoration : none;
 }
 
 .app_posts_related h2 {
-	color : #fff;
-	text-shadow : 0 2px 1px rgba(0, 0, 0, 0.698), 0 0 2px #000;
+	color : #333;
+	text-shadow : 0 1px 1px rgba(255, 255, 255, 0.698), 0 0 1px #ccc;
 }
 
 .app_posts_left {
