@@ -3,8 +3,8 @@
 
 <div class="app_posts_related">
 	
-    <div class="inner">
-    
+	<div class="inner">
+		
 		<div id="calendar-sidebar">
 			<h3><% _t('BROWSECALENDAR','Browse the Calendar') %></h3>
 			<div id="monthNav">

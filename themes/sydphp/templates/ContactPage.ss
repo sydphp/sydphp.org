@@ -2,19 +2,11 @@
 
 	<% include Slides %>
 	
-	<div id="contain">
-		<div id="main">
-			<div class="inner">
-				$Layout
-			</div>
-		</div>
-		
-		<div id="side">
-			<% include UpdateIcons %>
-			<% include Navigation %>
-		</div>
+	<div id="contain" class="typography">
+		$Layout
+		<% include Clearer %>
 	</div>
 	
-	<div class="break"></div>
+	<% include Clearer %>
 	
 <% include Footer %>

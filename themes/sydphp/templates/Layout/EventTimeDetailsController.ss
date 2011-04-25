@@ -1,4 +1,33 @@
-
+	
+	<div class="app_posts_related">
+	
+		<div class="inner">
+		
+			<div class="post">
+			
+				<% include BreadCrumbs %>
+				
+				<div class="events">
+				
+					<div class="event">
+						
+						<% control DateTime %>
+							<h2>$EventTitle <a class="btn" href="$ICSLink"><img src="/themes/sydphp/images/resource-calendar-insert.png" alt-"_t('ADD','Add to Calendar')" width="48" height="48" /></a></h2>
+							<div class="dates">$Summary</div>
+						<% end_control %>
+						
+						<div class="description">
+							$DateTime.Event.Content
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
 	<div class="event-sidebar app_posts">
 		<div class="inner">
 	
@@ -31,34 +60,5 @@
 				</div>
 			<% end_if %>
 			
-		</div>
-	</div>
-	
-	<div class="app_posts_related">
-	
-		<div class="inner">
-		
-			<div class="post">
-			
-				<% include BreadCrumbs %>
-				
-				<div class="events">
-				
-					<div class="event">
-						
-						<% control DateTime %>
-							<h2>$EventTitle <a class="btn" href="$ICSLink"><img src="/themes/sydphp/images/resource-calendar-insert.png" alt-"_t('ADD','Add to Calendar')" width="48" height="48" /></a></h2>
-							<div class="dates">$Summary</div>
-						<% end_control %>
-						
-						<div class="description">
-							$DateTime.Event.Content
-						</div>
-						
-					</div>
-					
-				</div>
-				
-			</div>
 		</div>
 	</div>

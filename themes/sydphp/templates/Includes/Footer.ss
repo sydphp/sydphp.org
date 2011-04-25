@@ -62,9 +62,10 @@
 		</div>
 		
 		<div id="app_footer">
-			<p><a href="http://www.codem.com.au">Site by Codem - Sydney Web Development</a> and Sydney PHP Group Organisers.
+			<p>Site development - The Sydney PHP Group Organisers.
 			
 			<% if SiteConfig.SourcePage %>
+				<br />
 				<span class="source">
 				<a href="$SiteConfig.SourcePage">code</a>
 				<% if SiteConfig.SourceBranch %>
@@ -73,7 +74,10 @@
 				</span>
 			<% end_if %>
 			
-			Content &copy; 2003-2011 Sydney PHP Group members. Posted content is the responsibility of its author(s).</p>
+			<br />
+			Content &copy; 2003-2011 The Sydney PHP Group members. Posted content is the responsibility of its author(s).
+			
+			</p>
 		</div>
 	
 	

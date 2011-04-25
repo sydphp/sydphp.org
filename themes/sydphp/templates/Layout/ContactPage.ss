@@ -1,25 +1,27 @@
-<div class="typography">
 	
-	<% include BreadCrumbs %>
+	<div class="app_posts_related">
 	
-	<div class="story">
-	
-		<h2>$Title</h2>
+		<div class="inner">
 		
-		$Content
-		
-		<% include Clearer %>
+			<% include BreadCrumbs %>
 	
-		<% if ContactFormSuccess %>
-			<div class="focus-all">
-				<p class="success"><span>Thanks, your submission has been received.</span></p>
+			<% include Share %>
+	
+			<h2>$Title</h2>
+			
+			<div class="post">
+		
+				$Content
+				
+				<% include Clearer %>
+			
+				<% if ContactFormSuccess %>
+					<p class="success"><span>Thanks, your submission has been received.</span></p>
+				<% end_if %>
+				
+				$ContactForm
 			</div>
-		<% end_if %>
-		
-		$ContactForm
-		
-		<% include SlideShow %>
+			
+		</div>
 	
 	</div>
-		
-</div>

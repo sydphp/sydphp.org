@@ -1,16 +1,5 @@
 <% require themedCSS(EventRegistrationDetails) %>
 
-	<div class="app_posts">
-		
-		<div class="inner">
-			<% if Message %>
-				<div class="reg_message">
-					$Message
-				</div>
-			<% end_if %>
-		</div>
-	</div>
-
 	<div class="app_posts_related">
 		
 		<div class="inner">
@@ -84,4 +73,14 @@
 			
 		</div>
 		
+	</div>
+	
+	<div class="app_posts">
+		<div class="inner">
+			<% if Message %>
+				<div class="reg_message">
+					$Message
+				</div>
+			<% end_if %>
+		</div>
 	</div>

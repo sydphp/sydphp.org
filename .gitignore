@@ -2,3 +2,4 @@
 /.bzrignore
 /mysite/db.php
 /silverstripe-cache/*
+/assets/*

@@ -2,14 +2,14 @@
 	<div class="app_posts_related">
 	
 		<div class="inner">
+		
+			<% include BreadCrumbs %>
 	
 			<% include Share %>
 	
 			<h2>$Title</h2>
 			
 			<div class="post">
-				
-					<% include BreadCrumbs %>
 				
 					$Content
 					

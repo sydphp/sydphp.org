@@ -628,11 +628,6 @@ hr.break, div.break {
 }
 
 .app_posts_related {
-	<?php
-		$ncss->Reset()
-				->Radius(array('all' => '12px'));
-	?>
-	padding : 1.3em;
 	font-size : 1.1em;
 	margin : 0 1em 1.2em 0;
 }
@@ -695,7 +690,6 @@ hr.break, div.break {
 .pin-right {
 	float : right;
 	display : block;
-	width : 30%;
 }
 
 .share-links ul {

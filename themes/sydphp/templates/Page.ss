@@ -7,6 +7,6 @@
 		<% include Clearer %>
 	</div>
 	
-	<div class="break"></div>
+	<% include Clearer %>
 	
 <% include Footer %>
