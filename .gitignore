@@ -1,0 +1,9 @@
+tmp/cache/models/*
+tmp/cache/persistent/*
+tmp/cache/views/*
+tmp/cache/*
+tmp/tests/*
+tmp/sessions/*
+tmp/logs/*
+
+!empty
