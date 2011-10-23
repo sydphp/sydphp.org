@@ -31,7 +31,12 @@ App::uses('Controller', 'Controller');
  * @package       app.Controller
  */
 class AppController extends Controller {
-	
+
+/**
+ * Layout
+ *
+ * @var string
+ */
 	public $layout = 'container';
 	
 }
