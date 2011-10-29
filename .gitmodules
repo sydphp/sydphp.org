@@ -1,0 +1,3 @@
+[submodule "Plugin/Rest"]
+	path = Plugin/Rest
+	url = git://github.com/predominant/CakePHP-ReST-DataSource-Plugin.git

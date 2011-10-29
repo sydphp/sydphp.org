@@ -39,4 +39,11 @@ class AppController extends Controller {
  */
 	public $layout = 'container';
 	
+	public $helpers = array(
+		'Form',
+		'Html',
+		'Time',
+		'Session',
+	);
+
 }
