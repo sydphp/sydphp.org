@@ -65,5 +65,4 @@ Cache::config('default', array('engine' => 'File'));
  */
 
 CakePlugin::load('Meetup');
-CakePlugin::load('Rest');
 
