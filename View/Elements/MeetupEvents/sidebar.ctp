@@ -17,8 +17,13 @@
 <br/></br/>
 
 <h3>They're Attending!</h3>
-<div>
+<div class="attendees">
 	<?php foreach ($meetupRSVPs as $rsvp): ?>
-		<?php echo "R "; ?>
+		<div class="attending-user">
+			<?php
+			echo $this->Html->image($rsvp['MeetupRSVP']['member_photo']['thumb_link'], array('width' => 40));
+			echo $rsvp['MeetupRSVP']['member']['name'];
+			?>
+		</div>
 	<?php endforeach; ?>
 </div>

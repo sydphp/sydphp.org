@@ -69,3 +69,13 @@
 	margin-right: 20px;
 	margin-left: 10px;
 }
+
+.attendees .attending-user {
+	padding: 5px 0;
+	display: block;
+	clear:both;
+}
+.attendees .attending-user img {
+	margin-right: 10px;
+	float: left;
+}
