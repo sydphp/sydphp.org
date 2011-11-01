@@ -2,23 +2,62 @@
 App::uses('DataSource', 'Model/Datasource');
 App::uses('HttpSocket', 'Network/Http');
 
+/**
+ * Meetup DataSource
+ *
+ * @package Meetup
+ * @subpackage Meetup.Controller
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 class MeetupSource extends DataSource {
 
+/**
+ * Description
+ *
+ * @var string
+ */
 	public $description = 'Meetup Datasource';
-	
+
+/**
+ * Http Connection
+ *
+ * @var HttpSocket
+ */
 	public $Http = null;
-	
+
+/**
+ * Default Configuration
+ *
+ * @var array
+ */
 	protected $_defaultConfig = array(
 		'sign' => true,
 	);
-	
+
+/**
+ * Base URI
+ *
+ * @var string
+ */
 	protected $_baseUri = 'api.meetup.com';
-	
+
+/**
+ * URI Mapping
+ *
+ * @var array
+ */
 	protected $_uriMap = array(
 		'events' => '/2/events',
 		'rsvps' => '/2/rsvps',
 	);
-	
+
+/**
+ * Constructor
+ *
+ * @param array $config Configuration
+ * @param HttpSocket $http Connection object
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	public function __construct($config, $http = null) {
 		$config = array_merge($config, $this->_defaultConfig);
 		parent::__construct($config);
@@ -36,7 +75,14 @@ class MeetupSource extends DataSource {
 		}
 		$this->Http = $http;
 	}
-	
+
+/**
+ * List Sources (Tables)
+ *
+ * @param mixed $data 
+ * @return array Tables
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	public function listSources($data = null) {
 		return array(
 			'meetup_checkins',
@@ -51,7 +97,16 @@ class MeetupSource extends DataSource {
 			'meetup_venues',
 		);
 	}
-	
+
+/**
+ * Read
+ *
+ * @param Model $model Model object
+ * @param array $queryData Query Data and options
+ * @param mixed $recursive Recursion level
+ * @return array Results
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	public function read(Model $model, $queryData = array(), $recursive = null) {
 		$table = preg_replace('/^meetup_/', '', $model->useTable);
 
@@ -94,7 +149,15 @@ class MeetupSource extends DataSource {
 
 		return $results;
 	}
-	
+
+/**
+ * Build Options
+ *
+ * @param array $options 
+ * @param Model $model 
+ * @return array Options
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	protected function _buildOptions($options, $model) {
 		foreach ($options as $key => $value) {
 			unset($options[$key]);
@@ -103,7 +166,15 @@ class MeetupSource extends DataSource {
 		}
 		return $options;
 	}
-	
+
+/**
+ * Build URI
+ *
+ * @param string $table Table name
+ * @param array $options Options
+ * @return array URI for HttpSocket
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	protected function _buildUri($table, $options) {
 		$path = $this->_uriMap[$table];
 		if (empty($path)) {
