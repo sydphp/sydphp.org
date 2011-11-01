@@ -1,5 +1,4 @@
 <?php
-
 App::uses('MeetupAppModel', 'Meetup.Model');
 App::uses('HttpSocket', 'Network/Http');
 
@@ -12,7 +11,11 @@ App::uses('HttpSocket', 'Network/Http');
  */
 class MeetupEvent extends MeetupAppModel {
 	
-	public $useDbConfig = 'meetup';
+	public $primaryKey = 'event_id';
+	
+	public $hasMany = array(
+		'Meetup.MeetupRSVP',
+	);
 
 	public function next() {
 		$meetup = Configure::read('Meetup');
@@ -37,11 +40,14 @@ class MeetupEvent extends MeetupAppModel {
 	
 	public function afterFind($results) {
 		$results = parent::afterFind($results);
+		// var_dump($results);
 		foreach ($results as &$result) {
-			$result[$this->alias]['datetime'] = $this->datetime(
-				$result[$this->alias]['time'],
-				$result[$this->alias]['utc_offset']
-			);
+			if (isset($result[$this->alias])) {
+				$result[$this->alias]['datetime'] = $this->datetime(
+					$result[$this->alias]['time'],
+					$result[$this->alias]['utc_offset']
+				);
+			}
 		}
 		return $results;
 	}

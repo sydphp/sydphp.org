@@ -16,6 +16,7 @@ class MeetupSource extends DataSource {
 	
 	protected $_uriMap = array(
 		'events' => '/2/events',
+		'rsvps' => '/2/rsvps',
 	);
 	
 	public function __construct($config, $http = null) {
@@ -54,7 +55,7 @@ class MeetupSource extends DataSource {
 	public function read(Model $model, $queryData = array(), $recursive = null) {
 		$table = preg_replace('/^meetup_/', '', $model->useTable);
 
-		$options = $queryData['conditions'];
+		$options = $this->_buildOptions($queryData['conditions'], $model);
 
 		$uri = $this->_buildUri($table, $options);
 		$response = $this->Http->get($uri[0], $uri[1]);
@@ -69,14 +70,39 @@ class MeetupSource extends DataSource {
 			return false;
 		}
 		
+		$_associations = $model->associations();
+		if ($model->recursive == -1) {
+			$_associations = array();
+		} elseif ($model->recursive == 0) {
+			unset($_associations[2], $_associations[3]);
+		}
+
 		$results = $result['results'];
 
-		// Structure as CakePHP model data with Alias in the array response
 		foreach ($results as $key => $result) {
 			$results[$key] = array($model->alias => $result);
+
+		// 	foreach ($_associations as $type) {
+		// 		foreach ($model->{$type} as $assoc => $assocData) {
+		// 			$linkModel = $model->{$assoc};
+		// 			debug($assocData);
+		// 			$linkModel->getDataSource();
+		// 			$assocResult = $linkModel->find('all', $queryData);
+		// 			debug($assocResult);
+		// 		}
+		// 	}
 		}
 
 		return $results;
+	}
+	
+	protected function _buildOptions($options, $model) {
+		foreach ($options as $key => $value) {
+			unset($options[$key]);
+			$key = preg_replace('/^' . $model->alias . '\./', '', $key);
+			$options[$key] = $value;
+		}
+		return $options;
 	}
 	
 	protected function _buildUri($table, $options) {
