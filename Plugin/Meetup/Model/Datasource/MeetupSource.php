@@ -48,6 +48,7 @@ class MeetupSource extends DataSource {
  */
 	protected $_uriMap = array(
 		'events' => '/2/events',
+		'members' => '/2/members',
 		'rsvps' => '/2/rsvps',
 	);
 
