@@ -70,15 +70,14 @@ class MeetupSource extends DataSource {
 			return false;
 		}
 		
-		$_associations = $model->associations();
-		if ($model->recursive == -1) {
-			$_associations = array();
-		} elseif ($model->recursive == 0) {
-			unset($_associations[2], $_associations[3]);
-		}
+		// $_associations = $model->associations();
+		// if ($model->recursive == -1) {
+		// 	$_associations = array();
+		// } elseif ($model->recursive == 0) {
+		// 	unset($_associations[2], $_associations[3]);
+		// }
 
 		$results = $result['results'];
-
 		foreach ($results as $key => $result) {
 			$results[$key] = array($model->alias => $result);
 

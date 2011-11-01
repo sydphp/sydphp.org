@@ -18,7 +18,7 @@
 
 <h3>They're Attending!</h3>
 <div>
-	<?php foreach ($meetupEvent['RSVP'] as $rsvp): ?>
+	<?php foreach ($meetupRSVPs as $rsvp): ?>
 		<?php echo "R "; ?>
 	<?php endforeach; ?>
 </div>

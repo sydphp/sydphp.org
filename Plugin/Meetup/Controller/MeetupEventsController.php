@@ -19,8 +19,9 @@ class MeetupEventsController extends MeetupAppController {
 		$this->MeetupEvent->recursive = 1;
 		$meetupEvent = $this->MeetupEvent->read(null, $id);
 		
-		$meetupEvent['RSVP'] = $this->MeetupEvent->MeetupRSVP->find('first', array('conditions' => array('event_id' => $id)));
-		$this->set(compact('meetupEvent'));
+		$meetupRSVPs = $this->MeetupEvent->MeetupRSVP->find('all', array('conditions' => array('event_id' => $id)));
+
+		$this->set(compact('meetupEvent', 'meetupRSVPs'));
 	}
 	
 }
