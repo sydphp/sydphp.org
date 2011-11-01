@@ -7,16 +7,32 @@ App::uses('HttpSocket', 'Network/Http');
  *
  * @package Meetup
  * @package Meetup.Model
- * @author Graham Weldon
+ * @author Graham Weldon (http://grahamweldon.com)
  */
 class MeetupEvent extends MeetupAppModel {
-	
+
+/**
+ * Primary Key
+ *
+ * @var string
+ */
 	public $primaryKey = 'event_id';
-	
+
+/**
+ * Has Many associations
+ *
+ * @var array
+ */
 	public $hasMany = array(
 		'Meetup.MeetupRSVP',
 	);
 
+/**
+ * Get the next occurring event
+ *
+ * @return mixed
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	public function next() {
 		$meetup = Configure::read('Meetup');
 		$request = array(
@@ -37,7 +53,14 @@ class MeetupEvent extends MeetupAppModel {
 		$response = $Http->request($request);
 		var_dump($response);
 	}
-	
+
+/**
+ * After Find Callback
+ *
+ * @param array $results Results
+ * @return array Results
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	public function afterFind($results) {
 		$results = parent::afterFind($results);
 		// var_dump($results);
@@ -51,7 +74,15 @@ class MeetupEvent extends MeetupAppModel {
 		}
 		return $results;
 	}
-	
+
+/**
+ * Format datetime from meetup.com data
+ *
+ * @param string $time Time
+ * @param string $utcOffset UTC Offset
+ * @return int Adjusted time
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	protected function datetime($time, $utcOffset) {
 		return floor(($time - $utcOffset) / 1000);
 	}

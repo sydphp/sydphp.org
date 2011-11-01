@@ -1,7 +1,22 @@
 <?php
 App::uses('HtmlHelper', 'View/Helper');
 
+/**
+ * Meetup Helper
+ *
+ * @package Meetup
+ * @subpackage Meetup.View.Helper
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 class MeetupHelper extends HtmlHelper {
+
+/**
+ * Generate venue HTML output
+ *
+ * @param array $venue Venue details
+ * @return string HTML String
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	public function venue($venue) {
 		$text = '';
 		if (!empty($venue)) {
@@ -29,7 +44,15 @@ class MeetupHelper extends HtmlHelper {
 		}
 		return $text;
 	}
-	
+
+/**
+ * Generate map for Venue
+ *
+ * @param array $venue Venue detauls
+ * @param array $options Options
+ * @return string HTML String
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
 	public function map($venue, $options = array()) {
 		$options = array_merge($options, array(
 			'width' => 560,
