@@ -71,11 +71,9 @@
 }
 
 .attendees .attending-user {
-	padding: 5px 0;
-	display: block;
-	clear:both;
+	padding: 3px 0;
 }
 .attendees .attending-user img {
+	text-align: baseline;
 	margin-right: 10px;
-	float: left;
 }
