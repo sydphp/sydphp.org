@@ -66,3 +66,4 @@ Cache::config('default', array('engine' => 'File'));
 
 CakePlugin::load('Meetup');
 
+Configure::write('beta', true);
