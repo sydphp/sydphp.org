@@ -70,4 +70,18 @@ class MeetupHelper extends HtmlHelper {
 		
 		return $this->image('http://maps.googleapis.com/maps/api/staticmap?' . http_build_query($options));
 	}
+
+/**
+ * Generate thumb profile image tag for output
+ *
+ * @param array $member Member information
+ * @return void
+ * @author Predominant
+ */
+	public function thumb($member) {
+		if (array_key_exists('photo', $member) && array_key_exists('thumb_link', $member['photo'])) {
+			return $this->image($member['photo']['thumb_link'], array('alt' => $member['name']));
+		}
+		return $this->image('member_thumb_placeholder.jpeg', array('alt' => $member['name']));
+	}
 }

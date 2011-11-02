@@ -1,5 +1,4 @@
 <?php
-var_dump($meetupMembers);
 $columns = array_chunk($meetupMembers, ceil(count($meetupMembers) / 2), true);
 ?>
 <div class="span7">
