@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title><?php echo $title_for_layout; ?></title>
+	<title>Sydney PHP User Group - <?php echo $title_for_layout; ?></title>
 	<meta name="description" content="SydPHP: Sydney's PHP User Group">
 
 	<!--[if lt IE 9]>
@@ -34,6 +34,6 @@
 		</div>
 
 		<?php echo $this->element('layout/footer'); ?>
-	</div> <!-- /container -->
+	</div>
 </body>
 </html>

@@ -23,7 +23,8 @@ class MeetupMembersController extends MeetupAppController {
 				'order' => 'visited',
 				'desc' => 'true'),
 		));
-		$this->set(compact('meetupMembers'));
+		$title_for_layout = 'Members';
+		$this->set(compact('meetupMembers', 'title_for_layout'));
 	}
 
 }
