@@ -17,4 +17,11 @@ class MeetupMember extends MeetupAppModel {
  */
 	public $useTable = 'meetup_members';
 
+/**
+ * Primary Key
+ *
+ * @var string
+ */
+	public $primaryKey = 'member_id';
+
 }
