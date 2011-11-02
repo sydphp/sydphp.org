@@ -39,10 +39,9 @@ class MeetupEventsController extends MeetupAppController {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function view($id = null) {
-		if (!$id) {
+		if (!$id || !($meetupEvent = $this->MeetupEvent->read(null, $id))) {
 			throw new NotFoundException(__('Could not find the requested Event'));
 		}
-		$meetupEvent = $this->MeetupEvent->read(null, $id);
 		$meetupRSVPs = $this->MeetupEvent->MeetupRSVP->find('all', array('conditions' => array('event_id' => $id)));
 
 		$this->set(compact('meetupEvent', 'meetupRSVPs'));
