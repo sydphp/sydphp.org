@@ -7,3 +7,5 @@ tmp/sessions/*
 tmp/logs/*
 
 !empty
+
+Config/database.php
