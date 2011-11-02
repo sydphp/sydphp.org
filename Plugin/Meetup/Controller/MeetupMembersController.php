@@ -27,4 +27,13 @@ class MeetupMembersController extends MeetupAppController {
 		$this->set(compact('meetupMembers', 'title_for_layout'));
 	}
 
+	public function view($id = null) {
+		if (!$id || !($member = $this->MeetupMember->read(null, $id))) {
+			throw new NotFoundException('Could not find the member with id ' . $id);
+		}
+		$title_for_layout = 'Member: ' . $member['MeetupMember']['name'];
+		$this->set(compact('member', 'title_for_layout'));
+	}
+
+
 }

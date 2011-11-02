@@ -75,8 +75,8 @@ class MeetupHelper extends HtmlHelper {
  * Generate thumb profile image tag for output
  *
  * @param array $member Member information
- * @return void
- * @author Predominant
+ * @return string Html String
+ * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function thumb($member) {
 		if (array_key_exists('photo', $member) && array_key_exists('thumb_link', $member['photo'])) {
@@ -84,4 +84,19 @@ class MeetupHelper extends HtmlHelper {
 		}
 		return $this->image('member_thumb_placeholder.jpeg', array('alt' => $member['name']));
 	}
+
+/**
+ * Generate photo profile image tag for output
+ *
+ * @param array $member Member information
+ * @return string Html String
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
+	public function photo($member) {
+		if (array_key_exists('photo', $member) && array_key_exists('thumb_link', $member['photo'])) {
+			return $this->image($member['photo']['thumb_link'], array('alt' => $member['name']));
+		}
+		return $this->image('member_thumb_placeholder.jpeg', array('alt' => $member['name']));
+	}
+
 }
