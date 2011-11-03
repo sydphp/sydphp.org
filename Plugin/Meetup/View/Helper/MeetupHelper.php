@@ -94,7 +94,7 @@ class MeetupHelper extends HtmlHelper {
  */
 	public function photo($member) {
 		if (array_key_exists('photo', $member) && array_key_exists('thumb_link', $member['photo'])) {
-			return $this->image($member['photo']['thumb_link'], array('alt' => $member['name']));
+			return $this->image($member['photo']['photo_link'], array('alt' => $member['name']));
 		}
 		return $this->image('member_thumb_placeholder.jpeg', array('alt' => $member['name']));
 	}
