@@ -21,6 +21,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('TwitterBootstrapFormHelper', 'View/Helper');
 
 /**
  * Application Controller
@@ -40,7 +41,9 @@ class AppController extends Controller {
 	public $layout = 'container';
 	
 	public $helpers = array(
-		'Form',
+		'Form' => array(
+			'className' => 'TwitterBootstrapForm'
+		),
 		'Html',
 		'Text',
 		'Time',

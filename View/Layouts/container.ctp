@@ -29,7 +29,10 @@
 				<h1><?php echo $title_for_layout; ?></h1>
 			</div>
 			<div class="row">
-				<?php echo $content_for_layout; ?>
+				<?php
+				echo $this->Session->flash();
+				echo $content_for_layout;
+				?>
 			</div>
 		</div>
 
