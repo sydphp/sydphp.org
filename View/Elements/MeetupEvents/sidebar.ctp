@@ -21,7 +21,7 @@
 	<?php foreach ($meetupRSVPs as $rsvp): ?>
 		<div class="attending-user">
 			<?php
-			echo $this->Html->image($rsvp['MeetupRSVP']['member_photo']['thumb_link'], array('width' => 40));
+			echo $this->Html->image($rsvp['MeetupRSVP']['member_photo']['thumb_link'], array('width' => 40, 'height' => 40));
 			echo $rsvp['MeetupRSVP']['member']['name'];
 			?>
 		</div>
