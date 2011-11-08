@@ -54,7 +54,10 @@ class Enquiry extends EnquiriesAppModel {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function save($data = null, $validate = true, $fieldList = array()) {
-		return $this->_sendEmail($data ?: $this->data);
+		if ($validate && $this->validates($data)) {
+			return $this->_sendEmail($data ?: $this->data);
+		}
+		return false;
 	}
 
 /**
