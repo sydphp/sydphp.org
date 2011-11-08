@@ -9,3 +9,4 @@ tmp/logs/*
 !empty
 
 Config/database.php
+Config/core.php
