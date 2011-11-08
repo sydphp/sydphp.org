@@ -106,5 +106,63 @@ body {
 	margin-right: 10px;
 	text-align: center;
 }
-.member-summary strong {
+
+/**
+ * Calendar icon / element
+ * ------------------------------------
+ */
+.calendar {
+	float: left;
+	width: 54px;
+	margin-top: .8em;
+	margin-right: 1em;
+	font-size: 0.8em; 
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #05587e;
+	-moz-box-shadow: 0 0 5px #05587e;
+	-webkit-box-shadow: 0 0 5px #05587e;
+}
+
+.calendar > span {
+	display: block;
+}
+
+.calendar > .month {
+	text-align: right;
+	padding: 2px 5px 2px 0;
+	font-size: 1.2em; 
+	background: #6086a6;
+	color: #fff;
+	font-weight: bold;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	text-shadow: 0 1px #000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#acc0d1), to(#6086a6));
+	background: -moz-linear-gradient(top, #acc0d1, #6086a6);
+}
+
+.calendar > .day {
+	text-align: center;
+	font-weight: bold;
+	font-size: 2.3em;
+	line-height: 1.8em;
+	background: #fff;
+	-webkit-border-bottom-left-radius:  5px;
+	-moz-border-radius-bottomleft:      5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomright:     5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#405b72), to(#e6e6e6), color-stop(.08,#f9f9f9));
+	background: -moz-linear-gradient(top, #f9f9f9, #e6e6e6);
+}
+
+/**
+ * Event summary (index)
+ * ------------------------------------
+ */
+.event-summary h2, .event-summary .well {
+	margin-left: 75px;
 }

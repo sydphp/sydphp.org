@@ -78,11 +78,19 @@ class MeetupHelper extends HtmlHelper {
  * @return string Html String
  * @author Graham Weldon (http://grahamweldon.com)
  */
-	public function thumb($member) {
-		if (array_key_exists('photo', $member) && array_key_exists('thumb_link', $member['photo'])) {
-			return $this->image($member['photo']['thumb_link'], array('alt' => $member['name']));
+	public function thumb($member, $name = null, $options = array()) {
+		$photo = null;
+		if (array_key_exists('photo', $member)) {
+			$photo = $member['photo'];
+		} elseif (array_key_exists('member_photo', $member)) {
+			$photo = $member['member_photo'];
 		}
-		return $this->image('member_thumb_placeholder.jpeg', array('alt' => $member['name']));
+
+		if ($photo == null || !array_key_exists('thumb_link', $photo)) {
+			return $this->image('member_thumb_placeholder.jpeg', array('alt' => $name));
+		}
+
+		return $this->image($photo['thumb_link'], array_merge($options, array('alt' => $name)));
 	}
 
 /**

@@ -42,12 +42,14 @@ class AppController extends Controller {
 	
 	public $helpers = array(
 		'Form' => array(
-			'className' => 'TwitterBootstrapForm'
+			'className' => 'TwitterBootstrapForm',
 		),
 		'Html',
 		'Text',
 		'Time',
-		'Session',
+		'Session' => array(
+			'className' => 'TwitterBootstrapSession',
+		),
 	);
 
 }

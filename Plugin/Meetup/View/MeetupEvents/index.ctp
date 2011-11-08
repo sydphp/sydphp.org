@@ -1,26 +1,9 @@
 <div class="span10">
-	<table class="zebra-striped">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Date</th>
-				<th>RSVPs</th>
-				<th>Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<?php foreach ($meetupEvents as $event): ?>
-				<tr>
-					<td><?php echo $event['MeetupEvent']['name']; ?></td>
-					<td><?php echo $this->Time->format('j M Y @ g:ia', $event['MeetupEvent']['datetime']); ?></td>
-					<td><?php echo $event['MeetupEvent']['yes_rsvp_count']; ?></td>
-					<td>
-						<?php echo $this->Html->link(__('View'), array('action' => 'view', $event['MeetupEvent']['id'])); ?>
-					</td>
-				</tr>
-			<?php endforeach; ?>
-		</tbody>
-	</table>
+	<?php foreach ($meetupEvents as $event): ?>
+		<?php echo $this->element('MeetupEvents/summary', array('meetupEvent' => $event)); ?>
+	<?php endforeach; ?>
+	<h3><?php __d('meetup', 'More event information'); ?></h3>
+	<p><?php echo __d('meetup', 'You can also %s for event information.', $this->Html->link(__d('meetup', 'visit our Meetup.com page'), 'http://meetup.com/' . $groupName)); ?></p>
 </div>
 
 <div class="span4 sidebar">

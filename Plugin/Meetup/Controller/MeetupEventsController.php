@@ -27,8 +27,12 @@ class MeetupEventsController extends MeetupAppController {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function index() {
-		$meetupEvents = $this->MeetupEvent->find('all', array('conditions' => array('group_urlname' => 'SydPHP')));
-		$this->set(compact('meetupEvents'));
+		$groupName = 'SydPHP';
+		$meetupEvents = $this->MeetupEvent->find('all', array('conditions' => array('group_urlname' => $groupName)));
+		foreach ($meetupEvents as &$meetupEvent) {
+			$meetupEvent['MeetupRSVP'] = $this->MeetupEvent->MeetupRSVP->find('all', array('conditions' => array('event_id' => $meetupEvent['MeetupEvent']['id'])));
+		}
+		$this->set(compact('meetupEvents', 'groupName'));
 	}
 
 /**
