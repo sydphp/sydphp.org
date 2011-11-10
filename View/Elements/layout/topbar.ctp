@@ -1,7 +1,7 @@
 <div class="topbar">
 	<div class="fill">
 		<div class="container">
-			<a class="brand" href="#">Syd<span class="php">PHP</span></a>
+			<a class="brand" href="/">Syd<span class="php">PHP</span></a>
 			<ul class="nav">
 				<li><?php echo $this->Html->link(__('Home'), '/'); ?></li>
 				<li><?php echo $this->Html->link(__('About'), array(
@@ -32,11 +32,11 @@
 					'action' => 'add',
 				)); ?></li>
 			</ul>
-			<form action="" class="pull-right">
+			<!-- <form action="" class="pull-right">
 				<input class="input-small" type="text" placeholder="Username">
 				<input class="input-small" type="password" placeholder="Password">
 				<button class="btn" type="submit">Sign in</button>
-			</form>
+			</form> -->
 		</div>
 	</div>
 </div>
