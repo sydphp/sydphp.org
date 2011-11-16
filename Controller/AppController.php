@@ -39,7 +39,12 @@ class AppController extends Controller {
  * @var string
  */
 	public $layout = 'container';
-	
+
+/**
+ * Helpers
+ *
+ * @var array
+ */
 	public $helpers = array(
 		'Form' => array(
 			'className' => 'TwitterBootstrapForm',
@@ -50,6 +55,16 @@ class AppController extends Controller {
 		'Session' => array(
 			'className' => 'TwitterBootstrapSession',
 		),
+	);
+
+/**
+ * undocumented variable
+ *
+ * @var array
+ */
+	public $components = array(
+		'RequestHandler',
+		'Session',
 	);
 
 }
