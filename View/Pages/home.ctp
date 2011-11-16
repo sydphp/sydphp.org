@@ -1,5 +1,8 @@
+<?php
+$this->set('title_for_layout', 'Sydney PHP User Group');
+?>
 <div class="span10">
-	<h2><?php echo __('Sydney PHP User Group'); ?></h2>
+	<h2><?php echo __('Recent Updates'); ?></h2>
 
 </div>
 
