@@ -1,9 +1,13 @@
 <h3>Next SydPHP Meetup</h3>
-<p>Our next meetup is scheduled for <strong>Oct. 20th, 2011 at 7pm</strong> at the Sydney Mechanics School of Arts.</p>
-<p>Topics up for discussion:</p>
-<ul>
-	<li>MySQL Performance</li>
-	<li>CakePHP 2.0 released!</li>
-</ul>
-<p>We'll also be taking down some topic notes from people, and making these available on the website to encourage new speakers, and new members to come along.</p>
-<a href="#" class="btn primary">RSVP for the event</a>
+<p>Our next meetup is scheduled for <strong><?php echo $this->Time->format('l, j M Y', $nextEvent['MeetupEvent']['datetime']); ?></strong>
+	at <?php echo $nextEvent['MeetupEvent']['venue']['name']; ?>.</p>
+<?php echo $this->Text->truncate($nextEvent['MeetupEvent']['description'], 450, array('html' => true)); ?>
+<?php echo $this->Html->link(
+	'Event details',
+	array(
+		'plugin' => 'meetup',
+		'controller' => 'meetup_events',
+		'action' => 'view',
+		$nextEvent['MeetupEvent']['id']),
+	array('class' => 'btn primary')
+); ?>

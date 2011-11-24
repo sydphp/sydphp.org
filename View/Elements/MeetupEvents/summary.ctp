@@ -14,7 +14,7 @@
 			<?php endfor; ?>
 		</div>
 		<p><strong><?php echo __d('meetup', '%s developers attending', $meetupEvent['MeetupEvent']['yes_rsvp_count']); ?></strong></p>
-		<p><?php echo $this->Text->truncate($meetupEvent['MeetupEvent']['description'], 450); ?></p>
+		<?php echo $this->Text->truncate($meetupEvent['MeetupEvent']['description'], 450, array('html' => true)); ?>
 		<div><?php echo $this->Html->link(
 			__('Read more about this event') . ' &raquo;',
 			array('action' => 'view', $meetupEvent['MeetupEvent']['id']), array('escape' => false)); ?></div>
