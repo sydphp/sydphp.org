@@ -28,24 +28,11 @@ class MeetupMembersController extends MeetupAppController {
 	}
 
 	public function view($id = null) {
-		if (!$id || !($member = $this->getSingleMemberById($id))) {
+		if (!$id || !($member = $this->MeetupMember->read(null, $id))) {
 			throw new NotFoundException('Could not find the member with id ' . $id);
 		}
 		print_r($member);
 		$title_for_layout = 'Member: ' . $member['MeetupMember']['name'];
 		$this->set(compact('member', 'title_for_layout'));
 	}
-	
-	private function getSingleMemberById($id)
-	{
-		$member=$this->MeetupMember->find('first', array(
-			'conditions' => array(
-				'group_urlname' => 'SydPHP',
-				'member_id' => $id,
-				'page' => 1),
-		));
-		return ($member)?$member:null;
-	}
-
-
 }
