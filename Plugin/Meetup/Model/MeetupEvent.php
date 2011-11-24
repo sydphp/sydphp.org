@@ -70,6 +70,8 @@ class MeetupEvent extends MeetupAppModel {
 					$result[$this->alias]['time'],
 					$result[$this->alias]['utc_offset']
 				);
+				debug($result[$this->alias]['utc_offset']);
+				debug($result[$this->alias]['datetime']);
 			}
 		}
 		return $results;
@@ -84,7 +86,7 @@ class MeetupEvent extends MeetupAppModel {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	protected function datetime($time, $utcOffset) {
-		return floor(($time - $utcOffset) / 1000);
+		return floor($time / 1000);// - floor($utcOffset / 1000); // - This is a wtf...
 	}
 
 }
