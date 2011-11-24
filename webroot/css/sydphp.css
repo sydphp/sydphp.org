@@ -89,6 +89,13 @@ body {
 	z-index: 1;
 }
 
+.github-ribbon {
+	position: fixed;
+	top: 40px;
+	right: 0;
+	z-index: 1;
+}
+
 .member-summary {
 	position: relative;
 	height: 165px;
@@ -165,4 +172,26 @@ body {
  */
 .event-summary h2, .event-summary .well {
 	margin-left: 75px;
+}
+
+/**
+ * Home page post details
+ * ------------------------------------
+ */
+.home-post {
+	position: relative;
+	float: left;
+	margin-bottom: 15px;
+	border: solid #ccc 1px;
+}
+.short-post {
+	width: 280px;
+	padding-left: 55px;
+}
+.short-post:nth-child(odd) {
+	margin-left: 15px;
+}
+.short-post img {
+	position: absolute;
+	left: 0;
 }
