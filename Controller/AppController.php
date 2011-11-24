@@ -22,6 +22,7 @@
 
 App::uses('Controller', 'Controller');
 App::uses('TwitterBootstrapFormHelper', 'View/Helper');
+App::uses('MeetupEvent', 'Meetup.Model');
 
 /**
  * Application Controller
@@ -67,4 +68,25 @@ class AppController extends Controller {
 		'Session',
 	);
 
+/**
+ * BeforeFilter callback
+ *
+ * @return void
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
+	public function beforeFilter() {
+		$this->_nextEvent();
+	}
+
+/**
+ * Get the next SydPHP event.
+ *
+ * @return void
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
+	protected function _nextEvent() {
+		$MeetupEvent = new MeetupEvent();
+		$nextEvent = $MeetupEvent->next('SydPHP');
+		$this->set(compact('nextEvent'));
+	}
 }
