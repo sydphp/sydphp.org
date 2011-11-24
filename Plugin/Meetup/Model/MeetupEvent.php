@@ -70,8 +70,6 @@ class MeetupEvent extends MeetupAppModel {
 					$result[$this->alias]['time'],
 					$result[$this->alias]['utc_offset']
 				);
-				debug($result[$this->alias]['utc_offset']);
-				debug($result[$this->alias]['datetime']);
 			}
 		}
 		return $results;
