@@ -13,11 +13,16 @@ class MeetupHelper extends HtmlHelper {
 /**
  * Generate venue HTML output
  *
- * @param array $venue Venue details
+ * @param array $meetup Meetup array
  * @return string HTML String
  * @author Graham Weldon (http://grahamweldon.com)
  */
-	public function venue($venue) {
+	public function venue($meetup) {
+		if (!isset($meetup['venue'])) {
+			return 'To be announced';
+		}
+		$venue = $meetup['venue'];
+
 		$text = '';
 		if (!empty($venue)) {
 			$address = '';
@@ -48,12 +53,17 @@ class MeetupHelper extends HtmlHelper {
 /**
  * Generate map for Venue
  *
- * @param array $venue Venue detauls
+ * @param array $meetup Meetup array
  * @param array $options Options
  * @return string HTML String
  * @author Graham Weldon (http://grahamweldon.com)
  */
-	public function map($venue, $options = array()) {
+	public function map($meetup, $options = array()) {
+		if (!isset($meetup['venue'])) {
+			return 'To be announced';
+		}
+		$venue = $meetup['venue'];
+
 		$options = array_merge($options, array(
 			'width' => 560,
 			'height' => 256,
@@ -66,9 +76,31 @@ class MeetupHelper extends HtmlHelper {
 		unset($options['width']);
 		unset($options['height']);
 		
-		$options['center'] = urlencode(sprintf('%s %s', $venue['address_2'], $venue['city']));
+		$address = $this->_getMapAddress($venue);
+		$options['center'] = urlencode(sprintf('%s %s', $address, $venue['city']));
+		
+		// @TODO: Place a map marker on the correct location.
 		
 		return $this->image('http://maps.googleapis.com/maps/api/staticmap?' . http_build_query($options));
+	}
+
+/**
+ * Get a string for use with Google Maps images.
+ *
+ * @param array $venue Venue data
+ * @return string Address
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
+	protected function _getMapAddress($venue) {
+		$address = '';
+		if (isset($venue['address_1'])) {
+			$address .= $venue['address_1'];
+		}
+		if (isset($venue['address_2'])) {
+			$address .= $venue['address_2'];
+		}
+		
+		return $address;
 	}
 
 /**

@@ -13,7 +13,7 @@
 			</tr>
 			<tr>
 				<td><strong>Venue</strong></td>
-				<td><?php echo $this->Meetup->venue($meetupEvent['MeetupEvent']['venue']); ?></td>
+				<td><?php echo $this->Meetup->venue($meetupEvent['MeetupEvent']); ?></td>
 			</tr>
 		</tbody>
 	</table>
@@ -21,7 +21,7 @@
 	<?php echo $meetupEvent['MeetupEvent']['description']; ?>
 
 	<h2>Venue</h2>
-	<?php echo $this->Meetup->map($meetupEvent['MeetupEvent']['venue']); ?>
+	<?php echo $this->Meetup->map($meetupEvent['MeetupEvent']); ?>
 </div>
 
 <div class="span4 sidebar">
