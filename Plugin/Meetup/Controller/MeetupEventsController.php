@@ -17,6 +17,7 @@ class MeetupEventsController extends MeetupAppController {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function beforeFilter() {
+		parent::beforeFilter();
 		$this->set('title_for_layout', 'Events');
 	}
 
