@@ -73,6 +73,14 @@ body {
 	margin-right: 20px;
 	margin-left: 10px;
 }
+img.border {
+	border: solid #ccc 1px;
+	padding: 5px;
+}
+img.blogimage.border {
+	margin-left: 15px;
+	margin-bottom: 10px;
+}
 
 .attendees .attending-user {
 	padding: 3px 0;
