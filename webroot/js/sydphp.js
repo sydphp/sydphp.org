@@ -20,7 +20,17 @@ $('document').ready
 								show:		true,
 								backdrop:	true
 							}
-						)
+						);
+						$(document.body).keypress
+						(
+							function(e)
+							{
+								if (e.keyCode==27)
+								{
+									$('#window-popup').modal({hide:true});
+								}
+							}
+						);
 					}
 				);
 			}
