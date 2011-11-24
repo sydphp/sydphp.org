@@ -38,5 +38,9 @@
 
 		<?php echo $this->element('layout/footer'); ?>
 	</div>
+	
+	<script type="text/javascript" src="/js/jquery/jquery.17.min.js"></script>
+	<script type="text/javascript" src="/js/jquery/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="/js/jquery/Application.js"></script>
 </body>
 </html>
