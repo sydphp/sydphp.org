@@ -25,12 +25,29 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-//	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-Router::connect('/', array('plugin' => 'meetup', 'controller' => 'meetup_events', 'action' => 'index'));
+	// Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::connect('/', array('plugin' => 'meetup', 'controller' => 'meetup_events', 'action' => 'index'));
+
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+
+	// Events
+	Router::connect('/events', array('plugin' => 'meetup', 'controller' => 'meetup_events', 'action' => 'index'));
+	Router::connect('/events/*', array('plugin' => 'meetup', 'controller' => 'meetup_events', 'action' => 'view'));
+
+	// Members
+	Router::connect('/members', array('plugin' => 'meetup', 'controller' => 'meetup_members', 'action' => 'index'));
+
+	// Contact
+	Router::connect('/contact', array('plugin' => 'enquiries', 'controller' => 'enquiries', 'action' => 'add'));
+
+	// Sponsors
+	Router::connect('/sponsors', array('controller' => 'pages', 'action' => 'dispay', 'sponsors'));
+
+	// About
+	Router::connect('/about', array('controller' => 'pages', 'action' => 'dispay', 'about'));
 
 /**
  * Load all plugin routes.  See the CakePlugin documentation on 
