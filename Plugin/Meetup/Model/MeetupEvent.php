@@ -33,25 +33,8 @@ class MeetupEvent extends MeetupAppModel {
  * @return mixed
  * @author Graham Weldon (http://grahamweldon.com)
  */
-	public function next() {
-		$meetup = Configure::read('Meetup');
-		$request = array(
-			'method' => 'GET',
-			'uri' => array(
-				'scheme' => $meetup['scheme'],
-				'host' => $meetup['host'],
-				'path' => '/2/events',
-				'query' => array(
-					'key' => $meetup['key'],
-					'sign' => $meetup['sign'] ? 'true' : 'false',
-					'group_urlname' => 'SydPHP',
-				)
-			)
-		);
-		
-		$Http = new HttpSocket();
-		$response = $Http->request($request);
-		var_dump($response);
+	public function next($name) {
+		return $this->find('first', array('conditions' => array('group_urlname' => $name)));
 	}
 
 /**
