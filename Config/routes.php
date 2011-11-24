@@ -44,10 +44,10 @@
 	Router::connect('/contact', array('plugin' => 'enquiries', 'controller' => 'enquiries', 'action' => 'add'));
 
 	// Sponsors
-	Router::connect('/sponsors', array('controller' => 'pages', 'action' => 'dispay', 'sponsors'));
+	Router::connect('/sponsors', array('controller' => 'pages', 'action' => 'display', 'sponsors'));
 
 	// About
-	Router::connect('/about', array('controller' => 'pages', 'action' => 'dispay', 'about'));
+	Router::connect('/about', array('controller' => 'pages', 'action' => 'display', 'about'));
 
 /**
  * Load all plugin routes.  See the CakePlugin documentation on 
