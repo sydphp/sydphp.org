@@ -11,13 +11,7 @@
 
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/sydphp.css" rel="stylesheet">
-
 	<link rel="shortcut icon" href="favicon.ico">
-	<!--
-	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-	-->
 </head>
 
 <body>
@@ -39,8 +33,9 @@
 		<?php echo $this->element('layout/footer'); ?>
 	</div>
 	
-	<script type="text/javascript" src="/js/jquery/jquery.17.min.js"></script>
-	<script type="text/javascript" src="/js/jquery/bootstrap-modal.js"></script>
-	<script type="text/javascript" src="/js/jquery/Application.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script>window.jQuery || document.write("<script src='/js/libs/jquery-1.7.min.js'>\x3C/script>")</script>
+	<script type="text/javascript" src="/js/libs/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="/js/sydphp.js"></script>
 </body>
 </html>
