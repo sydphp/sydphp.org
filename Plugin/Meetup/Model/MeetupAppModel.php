@@ -40,7 +40,7 @@ class MeetupAppModel extends AppModel {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function find($type = 'first', $query = array()) {
-		if (!$this->cacheFinds) {
+		if (!$this->cacheFinds && Configure::read('debug') == 0) {
 			return parent::find($type, $query);
 		}
 		
