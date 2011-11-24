@@ -32,6 +32,7 @@ class EnquiriesController extends EnquiriesAppController {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function beforeFilter() {
+		parent::beforeFilter();
 		Configure::load('Enquiries');
 		$this->options = array_merge($this->options, Configure::read('Enquiries'));
 	}
