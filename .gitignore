@@ -11,4 +11,4 @@ tmp/logs/*
 Config/database.php
 Config/core.php
 
-fabfile.pyc
+fabfile.py*
