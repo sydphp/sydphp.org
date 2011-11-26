@@ -27,7 +27,7 @@ def deploy():
 @task
 def clone():
 	arun('git clone {0} {1}{2}'.format(repository_uri, site_dir, timestr))
-	run('git checkout -b {0} origin/{0}'.format(branch))
+	# run('git checkout -b {0} origin/{0}'.format(branch))
 
 @task
 def config():
