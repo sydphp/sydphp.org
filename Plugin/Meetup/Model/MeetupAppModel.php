@@ -40,11 +40,12 @@ class MeetupAppModel extends AppModel {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function find($type = 'first', $query = array()) {
+		CakeLog::write("finding...");
 		if (!$this->cacheFinds || Configure::read('debug') !== 0) {
 			return parent::find($type, $query);
 		}
 		
-		$key = $this->alias . '_find_' . md5($type . $query);
+		$key = $this->alias . '_find_' . md5($type . implode('|', $query));
 		
 		if (!($data = Cache::read($key, 'meetup'))) {
 			$data = parent::find($type, $query);
