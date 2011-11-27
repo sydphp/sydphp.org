@@ -43,8 +43,8 @@ class MeetupAppModel extends AppModel {
 		if (!$this->cacheFinds || Configure::read('debug') !== 0) {
 			return parent::find($type, $query);
 		}
-		
-		$key = $this->alias . '_find_' . md5($type . implode('|', $query));
+
+		$key = $this->alias . '_find_' . md5($type . implode('_', $query));
 		
 		if (!($data = Cache::read($key, 'meetup'))) {
 			$data = parent::find($type, $query);
