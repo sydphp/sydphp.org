@@ -14,6 +14,10 @@ class MeetupHelper extends HtmlHelper {
 		'twitter' => 'Twitter',
 		'linkedin' => 'LinkedIn',
 	);
+	
+	protected $_socialUris = array(
+		'facebook' => 'http://facebook.com/people/@/%s',
+	);
 
 /**
  * Generate venue HTML output
@@ -179,6 +183,9 @@ class MeetupHelper extends HtmlHelper {
 		$method = '_link' . ucwords($type);
 		if (method_exists($this, $method)) {
 			return $this->$method($data);
+		}
+		if (isset($this->_socialUris[$type])) {
+			return sprintf($this->_socialUris[$type], $data['identifier']);
 		}
 		
 		return $data['identifier'];
