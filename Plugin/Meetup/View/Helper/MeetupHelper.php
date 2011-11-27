@@ -10,6 +10,11 @@ App::uses('HtmlHelper', 'View/Helper');
  */
 class MeetupHelper extends HtmlHelper {
 
+	protected $_socialTypes = array(
+		'twitter' => 'Twitter',
+		'linkedin' => 'LinkedIn',
+	);
+
 /**
  * Generate venue HTML output
  *
@@ -137,6 +142,57 @@ class MeetupHelper extends HtmlHelper {
 			return $this->image($member['photo']['photo_link'], array('alt' => $member['name']));
 		}
 		return $this->image('member_thumb_placeholder.jpeg', array('alt' => $member['name']));
+	}
+
+/**
+ * Generate social links for a member
+ *
+ * @param array $member Member data
+ * @return string
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
+	public function memberSocial($member) {
+		if (!isset($member['other_services'])) {
+			return '';
+		}
+		
+		$socials = array();
+		foreach ($member['other_services'] as $type => $data) {
+			$title = isset($this->_socialTypes[$type]) ? $this->_socialTypes[$type] : ucwords($type);
+			$uri = $this->_getSocialUri($type, $data);
+			$link = $this->link($title, $uri, array('class' => $type));
+			$socials[] = $this->tag('li', $link);
+		}
+		
+		return $this->tag('ul', implode('', $socials), array('class' => 'social-links'));
+	}
+
+/**
+ * Get a URI for the social type supplied.
+ *
+ * @param string $type Social Type
+ * @param array $data User Data
+ * @return string URI for social link
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
+	protected function _getSocialUri($type, $data) {
+		$method = '_link' . ucwords($type);
+		if (method_exists($this, $method)) {
+			return $this->$method($data);
+		}
+		
+		return $data['identifier'];
+	}
+
+/**
+ * Generate link for Twitter
+ *
+ * @param array $data User Data
+ * @return string URI
+ * @author Graham Weldon (http://grahamweldon.com)
+ */
+	protected function _linkTwitter($data) {
+		return 'http://twitter.com/' . substr($data['identifier'], 1);
 	}
 
 }
