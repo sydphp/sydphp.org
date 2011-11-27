@@ -8,4 +8,9 @@ $allowedKeys = array(
 	'photo',
 	'visited',
 );
-echo json_encode(array_intersect_key($member['MeetupMember'], array_flip($allowedKeys)));
+echo json_encode(
+	array_intersect_key(
+		$member['MeetupMember'],
+		array_flip($allowedKeys)
+	)
+);
