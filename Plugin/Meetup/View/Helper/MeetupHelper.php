@@ -164,7 +164,7 @@ class MeetupHelper extends HtmlHelper {
 		foreach ($member['other_services'] as $type => $data) {
 			$title = isset($this->_socialTypes[$type]) ? $this->_socialTypes[$type] : ucwords($type);
 			$uri = $this->_getSocialUri($type, $data);
-			$link = $this->link($title, $uri, array('class' => $type));
+			$link = $this->link($title, $uri, array('class' => $type, 'target' => '_blank'));
 			$socials[] = $this->tag('li', $link);
 		}
 		
