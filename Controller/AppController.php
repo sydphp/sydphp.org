@@ -35,13 +35,6 @@ App::uses('MeetupEvent', 'Meetup.Model');
 class AppController extends Controller {
 
 /**
- * Layout
- *
- * @var string
- */
-	public $layout = 'container';
-
-/**
  * Helpers
  *
  * @var array
