@@ -202,4 +202,8 @@ class MeetupHelper extends HtmlHelper {
 		return 'http://twitter.com/' . substr($data['identifier'], 1);
 	}
 
+	public function profileLink($title, $member, $options) {
+		return $this->link($title, 'http://meetup.com/members/' . $member['id'], array_merge(array('target' => '_blank'), $options));
+	}
+
 }
