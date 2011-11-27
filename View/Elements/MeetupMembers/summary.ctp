@@ -1,6 +1,5 @@
 <?php
 $member = $meetupMember['MeetupMember'];
-$memberId = 'member-' . $member['id'];
 ?>
 <div class="member-summary span4">
 	<div class="member-thumb">
@@ -17,7 +16,7 @@ $memberId = 'member-' . $member['id'];
 		__('View profile'),
 		array('action' => 'view', $member['id']),
 		array(
-			'data-controls-modal' => $memberId . '-modal',
+			'data-controls-modal' => 'member-' . $member['id'] . '-modal',
 			'data-backdrop' => 'true',
 			'keyboard' => 'true',
 		)); ?>

@@ -1,4 +1,4 @@
-<div id="<?php echo $memberId; ?>-modal" class="modal hide fade">
+<div id="member-<?php echo $member['id']; ?>-modal" class="modal hide fade">
 	<div class="modal-header">
 		<a href="#" class="close">×</a>
 		<h3><?php echo ucwords(strtolower($member['name'])); ?></h3>
@@ -12,10 +12,10 @@
 			echo $this->element('MeetupMembers/bio', array('member' => $member));
 			echo $this->element('MeetupMembers/social', array('member' => $member));
 			?>
-			<p><?php echo $this->Meetup->profileLink('View profile on meetup.com &raquo;', $member, array('class' => 'btn primary', 'escape' => false)); ?></p>
 		</div>
 	</div>
 	<div class="modal-footer">
-		Close
+		<a href="#" class="btn primary" data-controls-modal="member-<?php echo $member['id']; ?>-modal">Close</a>
+		<?php echo $this->Meetup->profileLink('View profile on meetup.com &raquo;', $member, array('class' => 'btn secondary', 'escape' => false)); ?>
 	</div>
 </div>
