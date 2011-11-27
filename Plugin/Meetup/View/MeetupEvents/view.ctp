@@ -1,4 +1,5 @@
 <div class="span10">
+	<?php echo $this->Html->link('&laquo; Back to events', array('action' => 'index'), array('escape' => false)); ?>
 	<h2><?php echo $meetupEvent['MeetupEvent']['name']; ?></h2>
 
 	<table>
