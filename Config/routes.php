@@ -49,6 +49,8 @@
 	// About
 	Router::connect('/about', array('controller' => 'pages', 'action' => 'display', 'about'));
 
+	Router::parseExtensions('json');
+
 /**
  * Load all plugin routes.  See the CakePlugin documentation on 
  * how to customize the loading of plugin routes.
