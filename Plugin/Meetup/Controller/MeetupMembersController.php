@@ -31,7 +31,7 @@ class MeetupMembersController extends MeetupAppController {
 		if (!$id || !($member = $this->MeetupMember->find('first', array('conditions' => array('member_id' => $id))))) {
 			throw new NotFoundException('Could not find the member with id ' . $id);
 		}
-		$title_for_layout = 'Member: ' . $member['MeetupMember']['name'];
+		$title_for_layout = 'Member: ' . ucwords(strtolower($member['MeetupMember']['name']));
 		$this->set(compact('member', 'title_for_layout'));
 	}
 }
