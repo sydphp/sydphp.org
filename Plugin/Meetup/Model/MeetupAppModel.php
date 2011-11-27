@@ -44,8 +44,8 @@ class MeetupAppModel extends AppModel {
 			return parent::find($type, $query);
 		}
 
-		$key = $this->alias . '_find_' . md5($type . implode('_', $query));
-		
+		$key = $this->alias . '_find_' . md5($type . json_encode($query['conditions']));
+
 		if (!($data = Cache::read($key, 'meetup'))) {
 			$data = parent::find($type, $query);
 			Cache::write($key, $data, 'meetup');
