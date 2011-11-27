@@ -156,7 +156,7 @@ class MeetupHelper extends HtmlHelper {
  * @author Graham Weldon (http://grahamweldon.com)
  */
 	public function memberSocial($member) {
-		if (!isset($member['other_services'])) {
+		if (!isset($member['other_services']) || !count($member['other_services'])) {
 			return '';
 		}
 		
