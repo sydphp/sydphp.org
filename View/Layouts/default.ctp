@@ -40,5 +40,6 @@
 	<script type="text/javascript" src="/js/libs/bootstrap-modal.js"></script>
 	<script type="text/javascript" src="/js/libs/jsrender-1.0pre.js"></script>
 	<script type="text/javascript" src="/js/sydphp.js"></script>
+	<?php echo $this->GoogleAnalytics->pageTracker('UA-27342221-1'); ?>
 </body>
 </html>

@@ -64,6 +64,6 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
 
-CakePlugin::load(array('Meetup','Enquiries'));
+CakePlugin::load(array('Meetup','Enquiries', 'Goodies'));
 
 Configure::write('beta', true);

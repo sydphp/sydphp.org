@@ -44,6 +44,7 @@ class AppController extends Controller {
 			'className' => 'TwitterBootstrapForm',
 		),
 		'Html',
+		'Goodies.GoogleAnalytics',
 		'Text',
 		'Time',
 		'Session' => array(
