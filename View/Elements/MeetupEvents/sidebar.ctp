@@ -12,7 +12,7 @@
 		</tr>
 	</tbody>
 </table>
-<a href="#" class="btn primary">RSVP for the meetup</a>
+<a href="<?php echo $meetupEvent['MeetupEvent']['event_url']; ?>" target="_blank" class="btn primary">RSVP for the meetup</a>
 
 <br/></br/>
 

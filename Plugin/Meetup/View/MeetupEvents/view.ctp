@@ -23,6 +23,10 @@
 
 	<h2>Venue</h2>
 	<?php echo $this->Meetup->map($meetupEvent['MeetupEvent']); ?>
+	
+	<h2>More Information</h2>
+	<p>You can find all information about the event, venue, people attending and more at the Meetup.com page.</p>
+	<p><a href="<?php echo $meetupEvent['MeetupEvent']['event_url']; ?>" target="_blank" class="btn secondary">View the meetup.com page for this event</a></p>
 </div>
 
 <div class="span4 sidebar">
