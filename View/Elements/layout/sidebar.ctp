@@ -11,3 +11,10 @@
 		$nextEvent['MeetupEvent']['id']),
 	array('class' => 'btn primary')
 ); ?>
+
+<br/>
+<br/>
+<br/>
+
+<h4>Proudly hosted by</h4>
+<p><a href="http://www.mammothmedia.com.au/" target="_blank"><img src="http://photos1.meetupstatic.com/photos/sponsor/c/1/5/4/iab120x90_469492.jpeg" alt="Mammoth media"/></a></p>
