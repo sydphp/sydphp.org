@@ -38,9 +38,17 @@ class MeetupEventsController extends MeetupAppController {
 			throw new NotFoundException(__('Could not find the requested Event'));
 		}
 		$meetupRSVPs = $this->MeetupEvent->MeetupRSVP->find('all', array('conditions' => array('event_id' => $id)));
+		App::uses('MeetupMember', 'Meetup.Model');
+		$this->MeetupMember = new MeetupMember();
+		$meetupMembers = $this->MeetupMember->find('all', array(
+			'conditions' => array(
+				'group_urlname' => 'SydPHP',
+				'order' => 'visited',
+				'desc' => 'true'),
+		));
 		$title_for_layout = 'Event: ' . $meetupEvent['MeetupEvent']['name'];
 
-		$this->set(compact('meetupEvent', 'meetupRSVPs', 'title_for_layout'));
+		$this->set(compact('meetupEvent', 'meetupRSVPs', 'meetupMembers', 'title_for_layout'));
 	}
 	
 }
