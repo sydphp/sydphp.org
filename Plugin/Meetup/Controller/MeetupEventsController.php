@@ -40,15 +40,21 @@ class MeetupEventsController extends MeetupAppController {
 		$meetupRSVPs = $this->MeetupEvent->MeetupRSVP->find('all', array('conditions' => array('event_id' => $id)));
 		App::uses('MeetupMember', 'Meetup.Model');
 		$this->MeetupMember = new MeetupMember();
-		$meetupMembers = $this->MeetupMember->find('all', array(
+		$members = $this->MeetupMember->find('all', array(
 			'conditions' => array(
 				'group_urlname' => 'SydPHP',
 				'order' => 'visited',
 				'desc' => 'true'),
 		));
+		foreach ($members as $member) {
+			$meetupMembers[$member['MeetupMember']['id']] = $member;
+		}
+		foreach ($meetupRSVPs as &$rsvp) {
+			$rsvp = $meetupMembers[$rsvp['MeetupRSVP']['member']['member_id']];
+		}
 		$title_for_layout = 'Event: ' . $meetupEvent['MeetupEvent']['name'];
 
-		$this->set(compact('meetupEvent', 'meetupRSVPs', 'meetupMembers', 'title_for_layout'));
+		$this->set(compact('meetupEvent', 'meetupRSVPs', 'title_for_layout'));
 	}
 	
 }

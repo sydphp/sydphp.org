@@ -19,11 +19,21 @@
 <h3>They're Attending!</h3>
 <div class="attendees">
 	<?php foreach ($meetupRSVPs as $rsvp): ?>
-		<div class="attending-user">
-			<?php
-			echo $this->Html->image($rsvp['MeetupRSVP']['member_photo']['thumb_link'], array('width' => 40, 'height' => 40));
-			echo $rsvp['MeetupRSVP']['member']['name'];
-			?>
-		</div>
+		<?php
+		echo $this->Html->link(
+			$this->Html->image($rsvp['MeetupMember']['photo']['thumb_link'], array('width' => 40, 'height' => 40, 'alt' => $rsvp['MeetupMember']['name'])),
+			array(
+				'plugin' => 'meetup',
+				'controller' => 'meetup_members',
+				'action' => 'view',
+				$rsvp['MeetupMember']['id']),
+			array(
+				'data-controls-modal' => 'member-' . $rsvp['MeetupMember']['id'] . '-modal',
+				'data-backdrop' => 'true',
+				'keyboard' => 'true',
+				'escape' => false)
+		);
+		echo $this->element('MeetupMembers/modal', array('member' => $rsvp['MeetupMember']));
+		?>
 	<?php endforeach; ?>
 </div>
