@@ -106,7 +106,6 @@ img.blogimage.border {
 
 .member-summary {
 	position: relative;
-	height: 165px;
 	padding: 10px;
 	border: 1px solid #ccc;
 	border: 1px solid rgba(0, 0, 0, 0.15);
@@ -114,10 +113,12 @@ img.blogimage.border {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	margin-bottom: 10px;
+	overflow: hidden;
 }
 .member-summary .member-thumb {
 	float: left;
-	width: 80px;
+	width: 60px;
+	height: 60px;
 	margin-right: 10px;
 	text-align: center;
 }
