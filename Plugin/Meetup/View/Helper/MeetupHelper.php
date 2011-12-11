@@ -35,6 +35,11 @@ class MeetupHelper extends HtmlHelper {
 		$text = '';
 		if (!empty($venue)) {
 			$address = '';
+
+			if (isset($venue['name']) && !empty($venue['name'])) {
+				$address .= $this->tag('strong', $venue['name']);
+			}
+			
 			if (isset($venue['address_1'])) {
 				$address .= $this->tag('div', $venue['address_1'], array('class' => 'extended-address'));
 			}
@@ -44,12 +49,15 @@ class MeetupHelper extends HtmlHelper {
 			// if (isset($venue['address_3'])) {
 			// 	$address .= $this->tag('div', $venue['address_3']);
 			// }
+
 			if (isset($venue['city'])) {
 				$address .= $this->tag('div', $venue['city'], array('class' => 'locality'));
 			}
+
 			// if (isset($venue['state'])) {
 			// 	$address .= $this->tag('div', $venue['state']. array('class' => 'region'));
 			// }
+
 			// TODO: Convert country code supplied 'au' to country name 'Australia'.
 			// if (isset($venue['country'])) {
 			// 	$address .= $this->tag('div', $venue['country']. array('class' => 'country-name'));

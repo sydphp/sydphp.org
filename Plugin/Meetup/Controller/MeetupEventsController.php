@@ -11,17 +11,6 @@ App::uses('MeetupAppController', 'Meetup.Controller');
 class MeetupEventsController extends MeetupAppController {
 
 /**
- * Before Filter
- *
- * @return void
- * @author Graham Weldon (http://grahamweldon.com)
- */
-	public function beforeFilter() {
-		parent::beforeFilter();
-		$this->set('title_for_layout', 'Events');
-	}
-
-/**
  * Index action
  *
  * @return void
@@ -33,6 +22,7 @@ class MeetupEventsController extends MeetupAppController {
 		foreach ($meetupEvents as &$meetupEvent) {
 			$meetupEvent['MeetupRSVP'] = $this->MeetupEvent->MeetupRSVP->find('all', array('conditions' => array('event_id' => $meetupEvent['MeetupEvent']['id'])));
 		}
+		$this->set('title_for_layout', 'Events');
 		$this->set(compact('meetupEvents', 'groupName'));
 	}
 
@@ -48,8 +38,9 @@ class MeetupEventsController extends MeetupAppController {
 			throw new NotFoundException(__('Could not find the requested Event'));
 		}
 		$meetupRSVPs = $this->MeetupEvent->MeetupRSVP->find('all', array('conditions' => array('event_id' => $id)));
+		$title_for_layout = 'Event: ' . $meetupEvent['MeetupEvent']['name'];
 
-		$this->set(compact('meetupEvent', 'meetupRSVPs'));
+		$this->set(compact('meetupEvent', 'meetupRSVPs', 'title_for_layout'));
 	}
 	
 }
