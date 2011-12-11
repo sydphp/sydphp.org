@@ -104,6 +104,10 @@ img.blogimage.border {
 	z-index: 1;
 }
 
+/**
+ * Members details
+ * ------------------------------------
+ */
 .member-summary {
 	position: relative;
 	padding: 10px;
@@ -121,6 +125,33 @@ img.blogimage.border {
 	height: 60px;
 	margin-right: 10px;
 	text-align: center;
+}
+
+.social-links {
+	margin-left: 0;
+}
+.social-links li {
+	list-style: none;
+	margin: 0;
+}
+.social-links li a {
+	display: block;
+	padding-left: 25px;
+	height: 20px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+.social-links .twitter {
+	background-image: url(../img/social-icons/16/twitter.png);
+}
+.social-links .facebook {
+	background-image: url(../img/social-icons/16/facebook.png);
+}
+.social-links .linkedin {
+	background-image: url(../img/social-icons/16/linkedin.png);
+}
+.social-links .tumblr {
+	background-image: url(../img/social-icons/16/tumblr.png);
 }
 
 /**
