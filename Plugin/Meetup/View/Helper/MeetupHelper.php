@@ -136,7 +136,7 @@ class MeetupHelper extends HtmlHelper {
 		}
 
 		if ($photo == null || !array_key_exists('thumb_link', $photo)) {
-			return $this->image('member_thumb_placeholder.jpeg', array('alt' => $name));
+			return $this->image('member_thumb_placeholder.gif', array('alt' => $name));
 		}
 
 		return $this->image($photo['thumb_link'], array_merge($options, array('alt' => $name)));
@@ -153,7 +153,7 @@ class MeetupHelper extends HtmlHelper {
 		if (array_key_exists('photo', $member) && array_key_exists('thumb_link', $member['photo'])) {
 			return $this->image($member['photo']['photo_link'], array('alt' => $member['name']));
 		}
-		return $this->image('member_thumb_placeholder.jpeg', array('alt' => $member['name']));
+		return $this->image('member_thumb_placeholder.gif', array('alt' => $member['name']));
 	}
 
 /**
