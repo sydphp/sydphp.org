@@ -10,12 +10,12 @@
 		'action' => 'add',
 	)); ?></p>
 	
-	<h2>Our current sponsors:</h2>
+	<h2>Ongoing sponsors:</h2>
 	
 	<?php
 	echo $this->element('sponsor', array(
 		'name' => 'Mammoth Media',
-		'url'  => 'http://mammothmedia.com.au',
+		'url'  => 'http://www.mammothvps.com.au/vps/plans?ref=efb3c177e80549afbbc69f36011fee24',
 		'logo' => 'http://photos1.meetupstatic.com/photos/sponsor/c/1/5/4/iab120x90_469492.jpeg',
 		'text' => array(
 			'Mammoth Media support the SydPHP user group through the provision of kickass servers for hosting the SydPHP website.',
@@ -44,7 +44,6 @@
 			'They also provide mobile application development, and training services.'
 		),
 	));
-
 	?>
 </div>
 
