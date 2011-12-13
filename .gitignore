@@ -12,3 +12,4 @@ Config/database.php
 Config/core.php
 
 fabfile.py*
+.gitignore
