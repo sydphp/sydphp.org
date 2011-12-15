@@ -10,6 +10,11 @@
 		'action' => 'add',
 	)); ?></p>
 	
+	<ul>
+		<li><a href="#ongoing">Ongoing Sponsors</a></li>
+		<li><a href="#phunconf2">Phunconference 2.0</a></li>
+	</ul>
+	
 	<a name="ongoing">
 	<br/>
 	<h2>Ongoing sponsors:</h2>
