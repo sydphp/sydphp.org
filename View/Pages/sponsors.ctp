@@ -10,8 +10,9 @@
 		'action' => 'add',
 	)); ?></p>
 	
+	<a name="ongoing">
+	<br/>
 	<h2>Ongoing sponsors:</h2>
-	
 	<?php
 	echo $this->element('sponsor', array(
 		'name' => 'Mammoth Media',
@@ -44,6 +45,24 @@
 			'They also provide mobile application development, and training services.'
 		),
 	));
+	?>
+
+	<a name="phunconf2">
+	<br/>
+	<h2>Event Sponsors - Phunconference 2.0</h2>
+	<?php
+	echo $this->element('sponsor', array(
+		'name' => 'Anchor Systems',
+		'url'  => 'http://http://www.anchor.com.au',
+		'logo' => '/img/sponsor/anchor_logo_162x50_original.gif',
+		'text' => array(
+			'Anchor Systems Pty Ltd. kindly sponsored the SydPHP 2011 Phunconference with a generous supply of beer to quench the thirst of our PHP development community.',
+			'Anchor systems provide hosting services, domains names, colocation and management solutions.',
+			'Check their website for more information.'
+		),
+	));
+	
+	
 	?>
 </div>
 
