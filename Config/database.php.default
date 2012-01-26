@@ -59,15 +59,11 @@
  */
 class DATABASE_CONFIG {
 
-	public $default = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => 'localhost',
-		'login' => 'user',
-		'password' => 'password',
-		'database' => 'database_name',
+	public $meetup = array(
+		'database' => null,
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'datasource' => 'Meetup.MeetupSource',
+		'key' => '', // Put your Meetup.com API Key here
 	);
 
 	public $test = array(
