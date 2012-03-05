@@ -39,6 +39,6 @@
 	<script>window.jQuery || document.write("<script src='/js/libs/jquery-1.7.min.js'>\x3C/script>")</script>
 	<script type="text/javascript" src="/js/libs/bootstrap-modal.js"></script>
 	<script type="text/javascript" src="/js/sydphp.js"></script>
-	<?php echo $this->GoogleAnalytics->pageTracker('UA-27342221-1'); ?>
+	<?php echo $this->GoogleAnalytics->pageTracker(Configure::read('Google.Analytics.Key')); ?>
 </body>
 </html>
