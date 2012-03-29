@@ -1,4 +1,4 @@
 <?php
 $config = array(
-	'Google.Analytics.Key' => 'UA-2226393-1',
+	'Google.Analytics.Key' => 'UA-27342221-1',
 );
