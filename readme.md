@@ -90,8 +90,9 @@ This will add your default `~/.ssh/id_rsa` file to the SSH agent. If you want to
 
 Doing the actual deploy, once the above has been setup, is very easy. Deploy to production with the following command:
 
-	fab deploy:environment=production
+	fab
 
+**Note:** Before you execute this command, you will need to ensure that your changes in the repository have been pushed up to the github master branch, as this is where the server clones code from.
 
 # Blah Stuff #
 
