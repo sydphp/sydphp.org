@@ -121,6 +121,7 @@ class MeetupSource extends DataSource {
 		}
 
 		$result = json_decode(utf8_encode($response->body), true);
+
 		if (!isset($result['results'])) {
 			$model->onError();
 			return false;
