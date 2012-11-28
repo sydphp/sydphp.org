@@ -44,7 +44,7 @@ class MeetupEvent extends MeetupAppModel {
  * @return array Results
  * @author Graham Weldon (http://grahamweldon.com)
  */
-	public function afterFind($results) {
+	public function afterFind($results, $primary = false) {
 		$results = parent::afterFind($results);
 		// var_dump($results);
 		foreach ($results as &$result) {
