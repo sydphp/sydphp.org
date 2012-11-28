@@ -5,7 +5,7 @@ The [SydPHP](http://sydphp.org) public website is built on CakePHP and uses the 
 ## Requirements ##
 
 * An API Key from [Meetup](http://meetup.com)
-* CakePHP 2.0
+* CakePHP 2.3
 * Webserver (Nginx, Apache, etc..)
 * PHP (5.3+)
 
