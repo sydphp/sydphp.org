@@ -12,7 +12,7 @@
     
     <ul>
         <li><a href="#ongoing">Ongoing Sponsors</a></li>
-        <li><a href="#phunconf3">Phunconference 3.0</a></li>
+        <li><a href="#phunconf3">Phunconference 3.0 (Dec 2012)</a></li>
     </ul>
     
     <a name="ongoing">
@@ -50,22 +50,11 @@
             'They are a creative communications company, recognised as one of the world leaders in the highly specialised field of experience media.'
         ),
     ));
-
-    echo $this->element('sponsor', array(
-        'name' => 'Cake Development Corporation',
-        'url'  => 'http://www.cakedc.com',
-        'logo' => 'http://photos4.meetupstatic.com/photos/sponsor/c/7/d/0/iab120x90_471152.jpeg',
-        'text' => array(
-            'The Cake Development Corporation occasionally puts up money to purchase food, drinks, and more. Further, they allow the time out of regular work days to enable the organisers to co-ordinate and manage the meetup events.',
-            'CakeDC provides development and consulting services, specialising in CakePHP application development.',
-            'They also provide mobile application development, and training services.'
-        ),
-    ));
     ?>
 
     <a name="phunconf3">
     <br/>
-    <h2>Event Sponsors - Phunconference 3.0</h2>
+    <h2>Event Sponsors - Phunconference 3.0 (Dec 2012)</h2>
     <?php
     echo $this->element('sponsor', array(
         'name' => 'Ninefold',
