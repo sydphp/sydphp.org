@@ -1,0 +1,27 @@
+{
+	"__base__": {
+		"name": "SydPHP Website",
+		"default": false,
+		"repository_uri": "git://github.com/sydphp/sydphp.org.git",
+		"current_dir": "current",
+		"config_dir": "config",
+		"configs": [
+			"Config/database.php",
+			"Config/bootstrap.php",
+			"Config/core.php"
+		],
+		"delete": [
+			"Config/bootstrap.php",
+			"webroot/test.php"
+		]
+	},
+	"production": {
+		"branch": "master",
+		"site_dir": "/home/vps/sites/sydphp.org/",
+		"default": true
+	},
+	"stage": {
+		"branch": "develop",
+		"site_dir": "/home/vps/sites/stage.sydphp.org/"
+	}
+}
