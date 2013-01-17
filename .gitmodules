@@ -1,3 +1,6 @@
 [submodule "Plugin/Goodies"]
 	path = Plugin/Goodies
 	url = git://github.com/predominant/goodies.git
+[submodule "deploy"]
+	path = deploy
+	url = git://github.com/predominant/deploy.git
