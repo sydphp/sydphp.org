@@ -11,4 +11,6 @@ tmp/logs/*
 Config/database.php
 Config/core.php
 
-fabfile.py*
+.DS_Store
+
+fabfile.pyc
