@@ -7,11 +7,10 @@
 		"config_dir": "config",
 		"configs": [
 			"Config/database.php",
-			"Config/bootstrap.php",
+			"Config/email.php",
 			"Config/core.php"
 		],
 		"delete": [
-			"Config/bootstrap.php",
 			"webroot/test.php"
 		]
 	},
