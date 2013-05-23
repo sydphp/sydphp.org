@@ -25,10 +25,23 @@
         'url'  => 'http://www.4mation.com.au/',
         'logo' => '/img/sponsor/4mation.jpg',
         'text' => array(
-            'Based in Sydney, 4mation\'s team has grown steadily over the last 10 years, and now consists of 25 professional web designers and PHP developers. With a proven track record of creating robust, high quality solutions, 4mation\'s digital producers and project managers can guide you through every step of the development process. Whether it\'s development of a new project, or rescuing a struggling existing website or system, 4mation can help.',
+            '4mation Technologies are one of Australia\'s leading website and software development companies, specialising in custom PHP development.',
+            'With a 100% local team of almost 40 professional designers, developers, producers and project managers, 4mation has a proven 11 year track record of delivering high quality commercial projects.',
+            'Whether it\'s development of a new project, or rescuing a struggling existing website or system, 4mation can help.',
             '4mation Technologies support the Sydney PHP user group by providing us with finances to book meeting rooms on a regular basis. It is through this support that we are able to provide free events.'            
         ),
     )); 
+    
+    echo $this->element('sponsor', array(
+        'name' => 'Ninefold',
+        'url'  => 'http://ninefold.com/',
+        'logo' => '/img/sponsor/Ninefold.jpg',
+        'text' => array(
+            'Ninefold is Australian cloud computing and storage with locally stored data, free local support, self service flexibility and low latency.',
+            'With easy online signup, you can enter your details and provision virtual servers and cloud storage within minutes - scaling up and down when needed.',
+            'Check their website for more information.'
+        ),
+    ));
     
     echo $this->element('sponsor', array(
         'name' => 'Mammoth Media',
@@ -50,21 +63,29 @@
             'They are a creative communications company, recognised as one of the world leaders in the highly specialised field of experience media.'
         ),
     ));
+
+    echo $this->element('sponsor', array(
+        'name' => 'Cake Development Corporation',
+        'url'  => 'http://www.cakedc.com',
+        'logo' => 'http://photos4.meetupstatic.com/photos/sponsor/c/7/d/0/iab120x90_471152.jpeg',
+        'text' => array(
+            'The Cake Development Corporation occasionally puts up money to purchase food, drinks, and more. Further, they allow the time out of regular work days to enable the organisers to co-ordinate and manage the meetup events.',
+            'CakeDC provides development and consulting services, specialising in CakePHP application development.',
+            'They also provide mobile application development, and training services.'
+        ),
+    ));
     ?>
 
     <a name="phunconf3">
     <br/>
-    <h2>Event Sponsors - Phunconference 3.0 (Dec 2012)</h2>
+    <h2>Event Sponsors - Phunconference 3.0</h2>
     <?php
     echo $this->element('sponsor', array(
         'name' => 'Ninefold',
         'url'  => 'http://ninefold.com/',
         'logo' => '/img/sponsor/Ninefold.jpg',
         'text' => array(
-            'Ninefold is Australian cloud computing and storage with locally stored data, free local support, self service flexibility and low latency.',
-            'With easy online signup, you can enter your details and provision virtual servers and cloud storage within minutes - scaling up and down when needed.',
-            'Ninefold organised all of the cold beer as well as providing a $1000 cloud hosting voucher along with fantastic t-shirts and free trial vouchers at Phunconference 3.0.',
-            'Check their website for more information.'
+            'As well as being an ongoing sponsor of SydPHP, Ninefold organised all of the cold beer, provided a $1000 cloud hosting voucher, fantastic t-shirts and free trial vouchers at Phunconference 3.0.'         
         ),
     ));
     
