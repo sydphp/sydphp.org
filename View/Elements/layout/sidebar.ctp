@@ -1,5 +1,7 @@
 <h3>Next SydPHP Meetup</h3>
-<p>Our next meetup is scheduled for <strong><?php echo $this->Time->format('l, j M Y', $nextEvent['MeetupEvent']['datetime']); ?></strong>
+<?php if(isset($nextEvent['MeetupEvent']['datetime'])): ?>
+<p>Our next meetup is scheduled for <strong>
+<?php echo $this->Time->format('l, j M Y', $nextEvent['MeetupEvent']['datetime']); ?></strong>
 	at <?php echo $nextEvent['MeetupEvent']['venue']['name']; ?>.</p>
 <?php echo $this->Text->truncate($nextEvent['MeetupEvent']['description'], 450, array('html' => true)); ?>
 <?php echo $this->Html->link(
@@ -11,6 +13,9 @@
 		$nextEvent['MeetupEvent']['id']),
 	array('class' => 'btn primary')
 ); ?>
+<?php else: ?>
+There are no upcoming Meetups
+<?php endif; ?>
 
 <br/>
 <br/>
