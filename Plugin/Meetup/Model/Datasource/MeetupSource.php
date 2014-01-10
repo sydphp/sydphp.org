@@ -120,7 +120,7 @@ class MeetupSource extends DataSource {
 			return false;
 		}
 
-		$result = json_decode(mb_convert_encoding($response->body, "UTF-8"), true);
+		$result = json_decode(mb_convert_encoding($response->body, "HTML-ENTITIES", "UTF-8"), true);
 
 		if (!isset($result['results'])) {
 			$model->onError();
