@@ -136,7 +136,7 @@ class MeetupHelper extends HtmlHelper {
 		}
 
 		if ($photo == null || !array_key_exists('thumb_link', $photo)) {
-			return $this->image('member_thumb_placeholder.gif', array('alt' => $name));
+			return $this->image('member_thumb_placeholder.gif', array_merge($options, array('alt' => $name)));
 		}
 
 		return $this->image($photo['thumb_link'], array_merge($options, array('alt' => $name)));
