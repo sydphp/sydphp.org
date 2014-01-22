@@ -90,7 +90,7 @@ echo $this->element('sponsor', array(
     echo $this->element('sponsor', array(
         'name' => 'The Iconic',
         'url'  => 'http://www.theiconic.com.au',
-        'logo' => '/img/sponsor/Iconic.png',
+        'logo' => '/img/sponsor/Iconic.jpg',
         'text' => array(            
             'The Iconic will be helpping us look awesome by providing 3 x $100 vouchers as giveaway prizes along with a large quantity of discount vouchers.'
         ),
