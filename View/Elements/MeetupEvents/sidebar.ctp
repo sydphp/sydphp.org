@@ -15,13 +15,15 @@
 <a href="<?php echo $meetupEvent['MeetupEvent']['event_url']; ?>" target="_blank" class="btn primary">RSVP for the meetup</a>
 
 <br/></br/>
-
 <h3>They're Attending!</h3>
 <div class="attendees">
 	<?php foreach ($meetupRSVPs as $rsvp): ?>
 		<?php
+		if($rsvp == null)
+			continue; 
+		
 		echo $this->Html->link(
-			$this->Html->image($rsvp['MeetupMember']['photo']['thumb_link'], array('width' => 40, 'height' => 40, 'alt' => $rsvp['MeetupMember']['name'])),
+			$this->Meetup->thumb($rsvp['MeetupMember'], $rsvp['MeetupMember']['name'], array('width' => 40, 'height' => 40)),
 			array(
 				'plugin' => 'meetup',
 				'controller' => 'meetup_members',
