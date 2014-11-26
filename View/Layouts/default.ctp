@@ -11,7 +11,7 @@
 
 	<link href="/css/bootstrap.css" rel="stylesheet">
 	<link href="/css/sydphp.css" rel="stylesheet">
-	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="shortcut icon" href="/favicon.ico">
 </head>
 
 <body>
