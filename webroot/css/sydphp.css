@@ -41,6 +41,7 @@ body {
   margin-left: 10px;
   padding-left: 9px;
   border-left: 1px solid #eee;
+  word-wrap: break-word;
 }
 
 .topbar .btn {
